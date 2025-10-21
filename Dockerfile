@@ -8,8 +8,8 @@ WORKDIR /app
 # Copy package files
 COPY package.json bun.lock ./
 
-# Install dependencies
-RUN bun install --frozen-lockfile
+# Install dependencies with retries
+RUN bun install --verbose
 
 # Stage 2: Builder
 FROM oven/bun:latest AS builder
