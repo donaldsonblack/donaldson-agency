@@ -1,7 +1,7 @@
-'use server';
+"use server";
 
-import { Resend } from 'resend';
-import ContactNotification from '@/emails/contact-notification';
+import { Resend } from "resend";
+import ContactNotification from "@/emails/contact-notification";
 
 export async function submitContactForm(formData: {
   name: string;
@@ -36,17 +36,17 @@ export async function submitContactForm(formData: {
     });
 
     if (error) {
-      console.error('Resend error:', error);
+      console.error("Resend error:", error);
       return { success: false, error: error.message };
     }
 
-    console.log('Email sent successfully:', data);
+    console.log("Email sent successfully:", data);
     return { success: true, data };
   } catch (error) {
-    console.error('Contact form error:', error);
+    console.error("Contact form error:", error);
     return {
       success: false,
-      error: error instanceof Error ? error.message : 'Failed to submit form'
+      error: error instanceof Error ? error.message : "Failed to submit form",
     };
   }
 }

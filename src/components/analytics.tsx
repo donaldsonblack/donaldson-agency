@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import Script from 'next/script';
+import Script from "next/script";
 
 export function Analytics() {
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
   if (!measurementId) {
-    console.warn('GA Measurement ID not found');
+    console.warn("GA Measurement ID not found");
     return null;
   }
 

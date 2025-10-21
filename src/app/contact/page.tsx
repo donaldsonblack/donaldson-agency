@@ -1,11 +1,11 @@
-import { ContactForm } from "@/components/contact-form";
-import { AnimatedSection } from "@/components/animated-section";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { AnimatedSection } from "@/components/animated-section";
+import { ContactForm } from "@/components/contact-form";
 
 export const metadata = {
-  title: 'Contact Us | Donaldson Agency',
-  description: 'Get in touch with our team to discuss your marketing needs',
+  title: "Contact Us | Donaldson Agency",
+  description: "Get in touch with our team to discuss your marketing needs",
 };
 
 export default function ContactPage() {
@@ -14,7 +14,9 @@ export default function ContactPage() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold">Donaldson</Link>
+          <Link href="/" className="text-2xl font-bold">
+            Donaldson
+          </Link>
           <Link
             href="/"
             className="text-sm hover:text-primary transition-colors"
@@ -32,7 +34,8 @@ export default function ContactPage() {
               Let's grow your business
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Ready to take your marketing to the next level? Get in touch with our team for a free consultation.
+              Ready to take your marketing to the next level? Get in touch with
+              our team for a free consultation.
             </p>
           </AnimatedSection>
         </div>
@@ -48,7 +51,8 @@ export default function ContactPage() {
                 <div>
                   <h2 className="text-3xl font-bold mb-4">Get in touch</h2>
                   <p className="text-muted-foreground">
-                    Fill out the form and our team will get back to you within 24 hours.
+                    Fill out the form and our team will get back to you within
+                    24 hours.
                   </p>
                 </div>
 
@@ -59,7 +63,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">hello@donaldsonagency.com</p>
+                      <p className="text-muted-foreground">
+                        hello@donaldsonagency.com
+                      </p>
                     </div>
                   </div>
 
@@ -80,7 +86,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold mb-1">Office</h3>
                       <p className="text-muted-foreground">
-                        123 Marketing Street<br />
+                        123 Marketing Street
+                        <br />
                         San Francisco, CA 94102
                       </p>
                     </div>
@@ -117,7 +124,8 @@ export default function ContactPage() {
               Prefer to chat in person?
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              Book a free 30-minute consultation with one of our marketing experts
+              Book a free 30-minute consultation with one of our marketing
+              experts
             </p>
             <Link
               href="#"

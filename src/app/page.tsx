@@ -1,6 +1,17 @@
+import {
+  ArrowRight,
+  BarChart3,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Zap,
+} from "lucide-react";
 import Link from "next/link";
-import { ArrowRight, TrendingUp, Users, Zap, Target, BarChart3, Sparkles } from "lucide-react";
-import { AnimatedSection, FadeIn, ScaleIn } from "@/components/animated-section";
+import {
+  AnimatedSection,
+  FadeIn,
+  ScaleIn,
+} from "@/components/animated-section";
 
 export default function Home() {
   return (
@@ -10,16 +21,28 @@ export default function Home() {
         <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
           <div className="text-2xl font-bold">Donaldson</div>
           <div className="hidden md:flex items-center gap-8">
-            <Link href="#services" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="#services"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Services
             </Link>
-            <Link href="#work" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="#work"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Work
             </Link>
-            <Link href="#about" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="#about"
+              className="text-sm hover:text-primary transition-colors"
+            >
               About
             </Link>
-            <Link href="/contact" className="text-sm hover:text-primary transition-colors">
+            <Link
+              href="/contact"
+              className="text-sm hover:text-primary transition-colors"
+            >
               Contact
             </Link>
           </div>
@@ -50,8 +73,9 @@ export default function Home() {
             </AnimatedSection>
             <AnimatedSection delay={0.3}>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Everything you need to grow your business, scale your brand, and dominate your market.
-                Built by marketers, for ambitious businesses.
+                Everything you need to grow your business, scale your brand, and
+                dominate your market. Built by marketers, for ambitious
+                businesses.
               </p>
             </AnimatedSection>
             <AnimatedSection delay={0.4}>
@@ -85,11 +109,15 @@ export default function Home() {
             </AnimatedSection>
             <AnimatedSection delay={0.7}>
               <div className="text-4xl font-bold">$50M+</div>
-              <div className="text-muted-foreground mt-1">Revenue Generated</div>
+              <div className="text-muted-foreground mt-1">
+                Revenue Generated
+              </div>
             </AnimatedSection>
             <AnimatedSection delay={0.8}>
               <div className="text-4xl font-bold">98%</div>
-              <div className="text-muted-foreground mt-1">Satisfaction Rate</div>
+              <div className="text-muted-foreground mt-1">
+                Satisfaction Rate
+              </div>
             </AnimatedSection>
           </div>
         </div>
@@ -107,8 +135,9 @@ export default function Home() {
                 Everything you've wished for in a marketing partner, and more.
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                We don't just create campaigns—we build growth engines. Our data-driven approach
-                ensures every dollar spent delivers measurable results.
+                We don't just create campaigns—we build growth engines. Our
+                data-driven approach ensures every dollar spent delivers
+                measurable results.
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
@@ -163,7 +192,8 @@ export default function Home() {
               Powerful solutions for every growth stage
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              From startups to enterprises, we have the tools and expertise to accelerate your success
+              From startups to enterprises, we have the tools and expertise to
+              accelerate your success
             </p>
           </AnimatedSection>
 
@@ -175,7 +205,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Growth Marketing</h3>
                 <p className="text-muted-foreground mb-4">
-                  Data-driven campaigns that deliver consistent, scalable growth across all channels
+                  Data-driven campaigns that deliver consistent, scalable growth
+                  across all channels
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
@@ -201,7 +232,8 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold mb-3">Brand Strategy</h3>
                 <p className="text-muted-foreground mb-4">
-                  Build a brand that resonates with your audience and stands out in the market
+                  Build a brand that resonates with your audience and stands out
+                  in the market
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
@@ -225,9 +257,12 @@ export default function Home() {
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                   <BarChart3 className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">Analytics & Insights</h3>
+                <h3 className="text-2xl font-bold mb-3">
+                  Analytics & Insights
+                </h3>
                 <p className="text-muted-foreground mb-4">
-                  Make informed decisions with comprehensive data analysis and reporting
+                  Make informed decisions with comprehensive data analysis and
+                  reporting
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li className="flex items-center gap-2">
@@ -266,17 +301,22 @@ export default function Home() {
               <div className="bg-background p-8 rounded-2xl h-full">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-xl">★</span>
+                    <span key={i} className="text-primary text-xl">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <p className="text-lg mb-4">
-                  "Donaldson transformed our digital presence. We saw a 300% increase in qualified leads within 3 months."
+                  "Donaldson transformed our digital presence. We saw a 300%
+                  increase in qualified leads within 3 months."
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10" />
                   <div>
                     <div className="font-semibold">Sarah Chen</div>
-                    <div className="text-sm text-muted-foreground">CEO, TechStart Inc</div>
+                    <div className="text-sm text-muted-foreground">
+                      CEO, TechStart Inc
+                    </div>
                   </div>
                 </div>
               </div>
@@ -286,17 +326,22 @@ export default function Home() {
               <div className="bg-background p-8 rounded-2xl h-full">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-xl">★</span>
+                    <span key={i} className="text-primary text-xl">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <p className="text-lg mb-4">
-                  "The ROI speaks for itself. Best marketing investment we've ever made. Highly recommend!"
+                  "The ROI speaks for itself. Best marketing investment we've
+                  ever made. Highly recommend!"
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10" />
                   <div>
                     <div className="font-semibold">Michael Rodriguez</div>
-                    <div className="text-sm text-muted-foreground">Founder, GrowthCo</div>
+                    <div className="text-sm text-muted-foreground">
+                      Founder, GrowthCo
+                    </div>
                   </div>
                 </div>
               </div>
@@ -306,17 +351,22 @@ export default function Home() {
               <div className="bg-background p-8 rounded-2xl h-full">
                 <div className="flex items-center gap-1 mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-xl">★</span>
+                    <span key={i} className="text-primary text-xl">
+                      ★
+                    </span>
                   ))}
                 </div>
                 <p className="text-lg mb-4">
-                  "Professional, creative, and results-driven. They truly understand modern marketing."
+                  "Professional, creative, and results-driven. They truly
+                  understand modern marketing."
                 </p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full bg-primary/10" />
                   <div>
                     <div className="font-semibold">Emily Watson</div>
-                    <div className="text-sm text-muted-foreground">CMO, Innovate Labs</div>
+                    <div className="text-sm text-muted-foreground">
+                      CMO, Innovate Labs
+                    </div>
                   </div>
                 </div>
               </div>
@@ -333,7 +383,8 @@ export default function Home() {
               Ready to accelerate your growth?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Book a free strategy session and discover how we can 10x your marketing results
+              Book a free strategy session and discover how we can 10x your
+              marketing results
             </p>
             <Link
               href="/contact"
@@ -343,7 +394,8 @@ export default function Home() {
               <ArrowRight className="w-5 h-5" />
             </Link>
             <p className="text-sm text-muted-foreground mt-4">
-              No commitment required • 30-minute consultation • Actionable insights guaranteed
+              No commitment required • 30-minute consultation • Actionable
+              insights guaranteed
             </p>
           </AnimatedSection>
         </div>
@@ -362,25 +414,61 @@ export default function Home() {
             <div>
               <h4 className="font-semibold mb-3">Services</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="#" className="hover:text-foreground">Growth Marketing</Link></li>
-                <li><Link href="#" className="hover:text-foreground">Brand Strategy</Link></li>
-                <li><Link href="#" className="hover:text-foreground">Analytics</Link></li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Growth Marketing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Brand Strategy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Analytics
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-3">Company</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="#" className="hover:text-foreground">About</Link></li>
-                <li><Link href="#" className="hover:text-foreground">Careers</Link></li>
-                <li><Link href="#contact" className="hover:text-foreground">Contact</Link></li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Careers
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#contact" className="hover:text-foreground">
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
               <h4 className="font-semibold mb-3">Legal</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li><Link href="#" className="hover:text-foreground">Privacy</Link></li>
-                <li><Link href="#" className="hover:text-foreground">Terms</Link></li>
-                <li><Link href="#" className="hover:text-foreground">Contact</Link></li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Privacy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Terms
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-foreground">
+                    Contact
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

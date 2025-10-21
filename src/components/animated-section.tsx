@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import { motion } from 'motion/react';
-import { ReactNode } from 'react';
+import { motion } from "motion/react";
+import type { ReactNode } from "react";
 
 interface AnimatedSectionProps {
   children: ReactNode;
   delay?: number;
-  direction?: 'up' | 'down' | 'left' | 'right';
+  direction?: "up" | "down" | "left" | "right";
   className?: string;
 }
 
 export function AnimatedSection({
   children,
   delay = 0,
-  direction = 'up',
-  className = ''
+  direction = "up",
+  className = "",
 }: AnimatedSectionProps) {
   const directions = {
     up: { y: 40, x: 0 },
@@ -27,18 +27,18 @@ export function AnimatedSection({
     <motion.div
       initial={{
         opacity: 0,
-        ...directions[direction]
+        ...directions[direction],
       }}
       whileInView={{
         opacity: 1,
         y: 0,
-        x: 0
+        x: 0,
       }}
-      viewport={{ once: true, margin: '-100px' }}
+      viewport={{ once: true, margin: "-100px" }}
       transition={{
         duration: 0.6,
         delay,
-        ease: [0.22, 1, 0.36, 1]
+        ease: [0.22, 1, 0.36, 1],
       }}
       className={className}
     >
@@ -50,7 +50,7 @@ export function AnimatedSection({
 export function FadeIn({
   children,
   delay = 0,
-  className = ''
+  className = "",
 }: {
   children: ReactNode;
   delay?: number;
@@ -72,7 +72,7 @@ export function FadeIn({
 export function ScaleIn({
   children,
   delay = 0,
-  className = ''
+  className = "",
 }: {
   children: ReactNode;
   delay?: number;
@@ -86,7 +86,7 @@ export function ScaleIn({
       transition={{
         duration: 0.5,
         delay,
-        ease: [0.22, 1, 0.36, 1]
+        ease: [0.22, 1, 0.36, 1],
       }}
       className={className}
     >

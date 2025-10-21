@@ -1,12 +1,15 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { Send } from 'lucide-react';
-import { submitContactForm } from '@/app/actions/contact';
+import { Send } from "lucide-react";
+import { useState } from "react";
+import { submitContactForm } from "@/app/actions/contact";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
+  const [message, setMessage] = useState<{
+    type: "success" | "error";
+    text: string;
+  } | null>(null);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -19,11 +22,11 @@ export function ContactForm() {
     // Get form data before async operations
     const formData = new FormData(form);
     const formValues = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      phone: formData.get('phone') as string,
-      company: formData.get('company') as string,
-      message: formData.get('message') as string,
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      company: formData.get("company") as string,
+      message: formData.get("message") as string,
     };
 
     // Send email via Resend
@@ -32,12 +35,15 @@ export function ContactForm() {
     setIsSubmitting(false);
 
     if (result.success) {
-      setMessage({ type: 'success', text: 'Thank you! We\'ll be in touch soon.' });
+      setMessage({
+        type: "success",
+        text: "Thank you! We'll be in touch soon.",
+      });
       form.reset();
     } else {
       setMessage({
-        type: 'error',
-        text: result.error || 'Something went wrong. Please try again.'
+        type: "error",
+        text: result.error || "Something went wrong. Please try again.",
       });
     }
   }
@@ -133,9 +139,9 @@ export function ContactForm() {
       {message && (
         <div
           className={`p-4 rounded-lg ${
-            message.type === 'success'
-              ? 'bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20'
-              : 'bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20'
+            message.type === "success"
+              ? "bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20"
+              : "bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20"
           }`}
         >
           {message.text}
@@ -143,7 +149,8 @@ export function ContactForm() {
       )}
 
       <p className="text-xs text-muted-foreground">
-        * Required fields. We respect your privacy and will never share your information.
+        * Required fields. We respect your privacy and will never share your
+        information.
       </p>
     </form>
   );
