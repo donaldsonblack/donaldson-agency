@@ -1,62 +1,78 @@
-# Dockerfile for Donaldson Agency Next.js App
-# Multi-stage build with Bun for optimal performance
 
-# Stage 1: Dependencies
-FROM oven/bun:latest AS deps
+# -----------------------------------------------------------------------------
+# Dockerfile for Donaldson Agency — Next.js App (Bun + IPv4-safe build)
+# -----------------------------------------------------------------------------
+# Features:
+# - Multi-stage build for small final image
+# - IPv4 + CA certificates fix for Bun registry connectivity
+# - Non-root runtime user for security
+# -----------------------------------------------------------------------------
+
+# =========================
+# Stage 1 — Dependencies
+# =========================
+FROM oven/bun:1 AS deps
 WORKDIR /app
 
-# Copy package files
-COPY package.json bun.lock ./
+# --- Fix networking and certificates early ---
+USER root
+RUN apt-get update && \
+    apt-get install -y ca-certificates curl && \
+    update-ca-certificates && \
+    echo "precedence ::ffff:0:0/96  100" >> /etc/gai.conf
+ENV BUN_CONFIG_DISABLE_IPV6=true
+# ---------------------------------------------
 
-# Install dependencies with retries
-RUN bun install --verbose
+# Copy dependency manifests
+COPY package.json bun.lockb ./
 
-# Stage 2: Builder
-FROM oven/bun:latest AS builder
+# Install dependencies with increased timeout
+RUN bun install --verbose --network-timeout 60000
+
+# =========================
+# Stage 2 — Builder
+# =========================
+FROM oven/bun:1 AS builder
 WORKDIR /app
 
-# Copy dependencies from deps stage
+# Copy dependencies and source
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
-# Set environment variables for build
+# Disable telemetry and set environment
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
-# Fix SSL and DNS certificates inside the build container
-USER root
-RUN apt-get update && apt-get install -y ca-certificates curl && update-ca-certificates
-
-# Build the application
+# Build the Next.js app
 RUN bun run build
 
-# Stage 3: Runner
-FROM oven/bun:latest AS runner
+# =========================
+# Stage 3 — Runtime
+# =========================
+FROM oven/bun:1 AS runner
 WORKDIR /app
 
-ENV NODE_ENV=production
-ENV NEXT_TELEMETRY_DISABLED=1
+# Create a non-root user
+RUN groupadd --system --gid 1001 nodejs && \
+    useradd --system --uid 1001 --gid 1001 nextjs
 
-# Create non-root user
-RUN groupadd --system --gid 1001 nodejs
-RUN useradd --system --uid 1001 nextjs
-
-# Copy necessary files
+# Copy only necessary build artifacts for runtime
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/.next/standalone ./
 COPY --from=builder /app/.next/static ./.next/static
 
-# Set correct permissions
+# Ensure correct permissions
 RUN chown -R nextjs:nodejs /app
-
 USER nextjs
 
+# Expose port 3000 for Zoraxy
 EXPOSE 3000
 
+# Environment configuration
+ENV NODE_ENV=production
+ENV HOST=0.0.0.0
 ENV PORT=3000
-ENV HOSTNAME="0.0.0.0"
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Start the application with Bun
+# Start the application
 CMD ["bun", "server.js"]
-
-
