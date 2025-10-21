@@ -49,7 +49,7 @@ Location: `.github/workflows/deploy.yml`
 On your local machine:
 
 ```bash
-# Generate a new SSH key (don't use a passphrase)
+# Generate a new SSH key (don not use a passphrase)
 ssh-keygen -t ed25519 -C "github-actions@donaldson-agency" -f ~/.ssh/github_deploy_key
 
 # Copy the public key
