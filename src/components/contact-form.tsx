@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { Send } from 'lucide-react';
-// import { submitContactForm } from '@/app/actions/contact';
+import { submitContactForm } from '@/app/actions/contact';
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -26,14 +26,8 @@ export function ContactForm() {
       message: formData.get('message') as string,
     };
 
-    // Simulate API call - replace with actual submitContactForm when ready
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    // TODO: Uncomment when you set up Resend + server action
-    // const result = await submitContactForm(formValues);
-
-    // Simulated success for now
-    const result = { success: true };
+    // Send email via Resend
+    const result = await submitContactForm(formValues);
 
     setIsSubmitting(false);
 
@@ -41,7 +35,10 @@ export function ContactForm() {
       setMessage({ type: 'success', text: 'Thank you! We\'ll be in touch soon.' });
       form.reset();
     } else {
-      setMessage({ type: 'error', text: 'Something went wrong. Please try again.' });
+      setMessage({
+        type: 'error',
+        text: result.error || 'Something went wrong. Please try again.'
+      });
     }
   }
 
