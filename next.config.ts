@@ -1,8 +1,11 @@
-import { defineConfig } from 'contentlayer/source-files';
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: 'standalone',
+  // Uncomment when using Contentlayer
+  // experimental: {
+  //   serverComponentsExternalPackages: ['contentlayer'],
+  // },
 };
 
 export default nextConfig;
