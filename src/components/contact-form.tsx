@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { submitContactForm } from '@/app/actions/contact';
+import { Send } from 'lucide-react';
+// import { submitContactForm } from '@/app/actions/contact';
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -12,71 +13,141 @@ export function ContactForm() {
     setIsSubmitting(true);
     setMessage(null);
 
-    const formData = new FormData(e.currentTarget);
-    const result = await submitContactForm({
+    // Store form reference before async operations
+    const form = e.currentTarget;
+
+    // Get form data before async operations
+    const formData = new FormData(form);
+    const formValues = {
       name: formData.get('name') as string,
       email: formData.get('email') as string,
+      phone: formData.get('phone') as string,
+      company: formData.get('company') as string,
       message: formData.get('message') as string,
-    });
+    };
+
+    // Simulate API call - replace with actual submitContactForm when ready
+    await new Promise(resolve => setTimeout(resolve, 1000));
+
+    // TODO: Uncomment when you set up Resend + server action
+    // const result = await submitContactForm(formValues);
+
+    // Simulated success for now
+    const result = { success: true };
 
     setIsSubmitting(false);
 
     if (result.success) {
       setMessage({ type: 'success', text: 'Thank you! We\'ll be in touch soon.' });
-      e.currentTarget.reset();
+      form.reset();
     } else {
       setMessage({ type: 'error', text: 'Something went wrong. Please try again.' });
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-6">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium">Name</label>
+        <label htmlFor="name" className="block text-sm font-medium mb-2">
+          Name *
+        </label>
         <input
           type="text"
           id="name"
           name="name"
           required
-          className="mt-1 block w-full rounded-md border p-2"
+          className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+          placeholder="John Doe"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium">Email</label>
+        <label htmlFor="email" className="block text-sm font-medium mb-2">
+          Email *
+        </label>
         <input
           type="email"
           id="email"
           name="email"
           required
-          className="mt-1 block w-full rounded-md border p-2"
+          className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+          placeholder="john@example.com"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium">Message</label>
+        <label htmlFor="phone" className="block text-sm font-medium mb-2">
+          Phone
+        </label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+          placeholder="+1 (555) 123-4567"
+        />
+      </div>
+
+      <div>
+        <label htmlFor="company" className="block text-sm font-medium mb-2">
+          Company
+        </label>
+        <input
+          type="text"
+          id="company"
+          name="company"
+          className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+          placeholder="Acme Inc."
+        />
+      </div>
+
+      <div>
+        <label htmlFor="message" className="block text-sm font-medium mb-2">
+          Message *
+        </label>
         <textarea
           id="message"
           name="message"
           required
           rows={5}
-          className="mt-1 block w-full rounded-md border p-2"
+          className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+          placeholder="Tell us about your project..."
         />
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="rounded-md bg-primary px-4 py-2 text-primary-foreground disabled:opacity-50"
+        className="w-full bg-primary text-primary-foreground px-6 py-4 rounded-lg font-semibold hover:opacity-90 transition-opacity disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center justify-center gap-2"
       >
-        {isSubmitting ? 'Sending...' : 'Send Message'}
+        {isSubmitting ? (
+          <>
+            <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+            Sending...
+          </>
+        ) : (
+          <>
+            Send Message
+            <Send className="w-5 h-5" />
+          </>
+        )}
       </button>
 
       {message && (
-        <p className={message.type === 'success' ? 'text-green-600' : 'text-red-600'}>
+        <div
+          className={`p-4 rounded-lg ${
+            message.type === 'success'
+              ? 'bg-green-500/10 text-green-600 dark:text-green-400 border border-green-500/20'
+              : 'bg-red-500/10 text-red-600 dark:text-red-400 border border-red-500/20'
+          }`}
+        >
           {message.text}
-        </p>
+        </div>
       )}
+
+      <p className="text-xs text-muted-foreground">
+        * Required fields. We respect your privacy and will never share your information.
+      </p>
     </form>
   );
 }

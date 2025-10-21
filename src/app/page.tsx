@@ -19,12 +19,12 @@ export default function Home() {
             <Link href="#about" className="text-sm hover:text-primary transition-colors">
               About
             </Link>
-            <Link href="/blog" className="text-sm hover:text-primary transition-colors">
-              Blog
+            <Link href="/contact" className="text-sm hover:text-primary transition-colors">
+              Contact
             </Link>
           </div>
           <Link
-            href="#contact"
+            href="/contact"
             className="bg-primary text-primary-foreground px-6 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity"
           >
             Get Started
@@ -57,7 +57,7 @@ export default function Home() {
             <AnimatedSection delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
                 >
                   Start Growing Today
@@ -336,7 +336,7 @@ export default function Home() {
               Book a free strategy session and discover how we can 10x your marketing results
             </p>
             <Link
-              href="#contact"
+              href="/contact"
               className="bg-primary text-primary-foreground px-12 py-5 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center gap-2"
             >
               Book Your Free Strategy Call
@@ -371,8 +371,8 @@ export default function Home() {
               <h4 className="font-semibold mb-3">Company</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li><Link href="#" className="hover:text-foreground">About</Link></li>
-                <li><Link href="/blog" className="hover:text-foreground">Blog</Link></li>
                 <li><Link href="#" className="hover:text-foreground">Careers</Link></li>
+                <li><Link href="#contact" className="hover:text-foreground">Contact</Link></li>
               </ul>
             </div>
             <div>
