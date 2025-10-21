@@ -24,7 +24,7 @@ ENV BUN_CONFIG_DISABLE_IPV6=true
 # ---------------------------------------------
 
 # Copy dependency manifests
-COPY package.json bun.lockb ./
+COPY package.json bun.lock ./
 
 # Install dependencies with increased timeout
 RUN bun install --verbose --network-timeout 60000
