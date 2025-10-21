@@ -11,6 +11,7 @@ A modern marketing agency website built with Next.js 15, TypeScript, and Tailwin
 - 🌙 Light/dark mode support
 - 📱 Fully responsive design
 - 🚀 Optimized for performance with Turbopack
+- 🔄 CI/CD pipeline with automatic rollback
 
 ## Tech Stack
 
@@ -60,11 +61,33 @@ npm run format
 
 ## Deployment
 
-### Docker Deployment (Ubuntu Server)
+### Automated CI/CD (Recommended)
 
-This project is ready for Docker deployment. See detailed instructions:
+This project includes a complete CI/CD pipeline with GitHub Actions:
 
-- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Full deployment guide for Ubuntu
+- ✅ Automatic deployment on push to main
+- ✅ Build and test validation
+- ✅ Health checks
+- ✅ Automatic rollback on failure
+
+**Setup:**
+
+1. Configure GitHub Secrets (see [CI-CD.md](./CI-CD.md))
+2. Push to main branch
+3. GitHub Actions handles the rest!
+
+```bash
+git push origin main
+# Deployment happens automatically
+```
+
+See **[CI-CD.md](./CI-CD.md)** for complete setup instructions.
+
+### Manual Docker Deployment
+
+For manual deployments on your Ubuntu server:
+
+- **[DEPLOYMENT.md](./DEPLOYMENT.md)** - Full deployment guide
 - **[DOCKER.md](./DOCKER.md)** - Docker commands reference
 
 **Quick Deploy:**
@@ -72,11 +95,14 @@ This project is ready for Docker deployment. See detailed instructions:
 ```bash
 # On your Ubuntu server
 ./deploy.sh
+
+# Rollback if needed
+./deploy.sh rollback
 ```
 
 ### Vercel Deployment
 
-Alternatively, deploy easily to Vercel:
+Alternatively, deploy to Vercel:
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
@@ -113,10 +139,11 @@ donaldson-agency/
 
 ## Documentation
 
-- [CLAUDE.md](./CLAUDE.md) - Development guidelines for AI assistants
+- [CI-CD.md](./CI-CD.md) - **CI/CD setup and usage guide**
+- [DEPLOYMENT.md](./DEPLOYMENT.md) - Manual server deployment instructions
+- [DOCKER.md](./DOCKER.md) - Docker commands reference
 - [IMPLEMENTATION.md](./IMPLEMENTATION.md) - Feature implementation guides
-- [DEPLOYMENT.md](./DEPLOYMENT.md) - Server deployment instructions
-- [DOCKER.md](./DOCKER.md) - Docker reference
+- [CLAUDE.md](./CLAUDE.md) - Development guidelines for AI assistants
 
 ## Learn More
 
