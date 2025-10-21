@@ -543,15 +543,11 @@ export default function PostPage({ params }: { params: { slug: string } }) {
 }
 ```
 
-### 9. Add Tailwind Typography (Optional but Recommended)
-```bash
-npm install @tailwindcss/typography
-```
+### 9. Blog Prose Styling
 
-Add to `globals.css`:
-```css
-@import '@tailwindcss/typography';
-```
+**Note**: Tailwind CSS v4 doesn't use `@tailwindcss/typography` plugin the same way as v3. Custom prose styles are already included in `src/app/globals.css` that provide typography styling for blog posts.
+
+The `.prose` class will automatically style your MDX content with proper spacing, font sizes, and colors that adapt to light/dark mode.
 
 ---
 
@@ -791,7 +787,7 @@ NEXT_PUBLIC_GA_MEASUREMENT_ID="G-XXXXXXXXXX"
 1. **Install all dependencies**:
    ```bash
    npm install @libsql/client drizzle-orm resend react-email contentlayer next-contentlayer date-fns react-cookie-consent
-   npm install -D drizzle-kit @react-email/components rehype-pretty-code rehype-autolink-headings rehype-slug shiki @tailwindcss/typography
+   npm install -D drizzle-kit @react-email/components rehype-pretty-code rehype-autolink-headings rehype-slug shiki
    ```
 
 2. **Set up Turso database** (follow Database Setup section)
