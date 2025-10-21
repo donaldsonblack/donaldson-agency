@@ -1,4 +1,5 @@
-import type { NextConfig } from "next";
+import { defineConfig } from 'contentlayer/source-files';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   /* config options here */
