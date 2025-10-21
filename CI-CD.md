@@ -27,7 +27,7 @@ This project uses GitHub Actions for continuous integration and deployment:
    - Connects to production server via SSH
    - Creates backup of the current Docker image
    - Pulls latest code from GitHub
-   - Builds new Docker image
+   - Builds a new Docker image
    - Deploys new container
    - Runs health checks
 
