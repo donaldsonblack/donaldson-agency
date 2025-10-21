@@ -25,14 +25,14 @@ This project uses GitHub Actions for continuous integration and deployment:
 
 2. **Deploy Stage** (only on main branch)
    - Connects to production server via SSH
-   - Creates backup of current Docker image
+   - Creates backup of the current Docker image
    - Pulls latest code from GitHub
    - Builds new Docker image
    - Deploys new container
    - Runs health checks
 
 3. **Rollback Stage** (on failure)
-   - Automatically triggered if deployment fails
+   - Automatically triggered if the deployment fails
    - Stops failed container
    - Restores previous Docker image
    - Starts old container
