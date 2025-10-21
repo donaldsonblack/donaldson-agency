@@ -23,6 +23,10 @@ COPY . .
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
 
+# Fix SSL and DNS certificates inside the build container
+USER root
+RUN apt-get update && apt-get install -y ca-certificates curl && update-ca-certificates
+
 # Build the application
 RUN bun run build
 
@@ -54,3 +58,5 @@ ENV HOSTNAME="0.0.0.0"
 
 # Start the application with Bun
 CMD ["bun", "server.js"]
+
+
