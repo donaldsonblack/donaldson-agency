@@ -140,6 +140,7 @@ donaldson-agency/
 ## Documentation
 
 - [CI-CD.md](./CI-CD.md) - **CI/CD setup and usage guide**
+- [ZORAXY-SETUP.md](./ZORAXY-SETUP.md) - **Zoraxy reverse proxy configuration**
 - [DEPLOYMENT.md](./DEPLOYMENT.md) - Manual server deployment instructions
 - [DOCKER.md](./DOCKER.md) - Docker commands reference
 - [IMPLEMENTATION.md](./IMPLEMENTATION.md) - Feature implementation guides
