@@ -3,8 +3,6 @@
 import { Resend } from 'resend';
 import ContactNotification from '@/emails/contact-notification';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function submitContactForm(formData: {
   name: string;
   email: string;
@@ -19,6 +17,9 @@ export async function submitContactForm(formData: {
     //   email: formData.email,
     //   message: formData.message,
     // });
+
+    // Initialize Resend client at runtime (not build time)
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     // Send email notification
     const { data, error } = await resend.emails.send({
