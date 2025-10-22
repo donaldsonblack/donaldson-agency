@@ -12,6 +12,7 @@ import {
   FadeIn,
   ScaleIn,
 } from "@/components/animated-section";
+import { TimelineWithBeam } from "@/components/timeline-with-beam";
 
 export default function Home() {
   return (
@@ -280,6 +281,243 @@ export default function Home() {
                 </ul>
               </div>
             </ScaleIn>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 px-4 bg-background">
+        <div className="container mx-auto max-w-6xl">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Growth shouldn't take years to implement.
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Here's what you can achieve with Donaldson in just 30 days.
+            </p>
+          </AnimatedSection>
+
+          {/* Timeline - Desktop Only */}
+          <div className="hidden md:block">
+            <TimelineWithBeam />
+          </div>
+
+          {/* Cards - Desktop: 3 columns, Mobile: Stacked with day labels */}
+          <div className="md:grid md:grid-cols-3 md:gap-8 space-y-8 md:space-y-0">
+            {/* Card 1 */}
+            <AnimatedSection delay={0.1}>
+              <div className="flex flex-col">
+                {/* Day label for mobile */}
+                <div className="md:hidden flex justify-center mb-4">
+                  <div className="inline-block px-4 py-2 bg-background border border-border rounded-full text-sm font-medium">
+                    Day 1
+                  </div>
+                </div>
+                <div className="bg-muted p-8 rounded-2xl h-full">
+                  <h3 className="text-xl font-bold mb-6">Get started.</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-muted-foreground">
+                      Discovery call and strategy session
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-muted-foreground">
+                      Brand audit and competitor analysis
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-muted-foreground">
+                      Custom marketing roadmap delivered
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            </AnimatedSection>
+
+            {/* Card 2 */}
+            <AnimatedSection delay={0.2}>
+              <div className="flex flex-col">
+                {/* Day label for mobile */}
+                <div className="md:hidden flex justify-center mb-4">
+                  <div className="inline-block px-4 py-2 bg-background border border-border rounded-full text-sm font-medium">
+                    Day 7
+                  </div>
+                </div>
+                <div className="bg-muted p-8 rounded-2xl h-full">
+                  <h3 className="text-xl font-bold mb-6">Get comfortable.</h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-muted-foreground">
+                      First campaigns live and running
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-muted-foreground">
+                      Analytics dashboard and reporting set up
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-muted-foreground">
+                      Weekly optimization and A/B testing
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            </AnimatedSection>
+
+            {/* Card 3 */}
+            <AnimatedSection delay={0.3}>
+              <div className="flex flex-col">
+                {/* Day label for mobile */}
+                <div className="md:hidden flex justify-center mb-4">
+                  <div className="inline-block px-4 py-2 bg-background border border-border rounded-full text-sm font-medium">
+                    Day 30
+                  </div>
+                </div>
+                <div className="bg-muted p-8 rounded-2xl h-full">
+                  <h3 className="text-xl font-bold mb-6">
+                    Ask why you didn't start sooner.
+                  </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-muted-foreground">
+                      Measurable ROI and revenue growth
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-muted-foreground">
+                      Lead generation on autopilot
+                    </span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg
+                      className="w-5 h-5 text-primary mt-0.5 flex-shrink-0"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-muted-foreground">
+                      Scalable growth systems in place
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            </AnimatedSection>
           </div>
         </div>
       </section>
