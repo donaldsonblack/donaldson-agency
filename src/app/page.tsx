@@ -13,6 +13,10 @@ import {
   ScaleIn,
 } from "@/components/animated-section";
 import { TimelineWithBeam } from "@/components/timeline-with-beam";
+import {
+  ScrollVelocityContainer,
+  ScrollVelocityRow,
+} from "@/components/ui/scroll-based-velocity";
 
 export default function Home() {
   return (
@@ -523,9 +527,9 @@ export default function Home() {
       </section>
 
       {/* Social Proof */}
-      <section className="bg-muted py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <AnimatedSection className="text-center mb-16">
+      <section className="bg-muted py-20 px-4 overflow-hidden">
+        <div className="container mx-auto max-w-6xl mb-12">
+          <AnimatedSection className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Trusted by industry leaders
             </h2>
@@ -533,83 +537,121 @@ export default function Home() {
               Join hundreds of successful businesses growing with Donaldson
             </p>
           </AnimatedSection>
+        </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <AnimatedSection delay={0.1}>
-              <div className="bg-background p-8 rounded-2xl h-full">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-xl">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-lg mb-4">
-                  "Donaldson transformed our digital presence. We saw a 300%
-                  increase in qualified leads within 3 months."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10" />
-                  <div>
-                    <div className="font-semibold">Sarah Chen</div>
-                    <div className="text-sm text-muted-foreground">
-                      CEO, TechStart Inc
+        <div className="relative flex w-full flex-col items-center justify-center">
+          <ScrollVelocityContainer className="w-full">
+            <ScrollVelocityRow baseVelocity={1} direction={1} className="py-4">
+              {[...Array(3)].flatMap(() => [
+                {
+                  quote:
+                    "Donaldson transformed our digital presence. We saw a 300% increase in qualified leads.",
+                  author: "Sarah Chen",
+                  role: "CEO, TechStart Inc",
+                },
+                {
+                  quote:
+                    "The ROI speaks for itself. Best marketing investment we've ever made.",
+                  author: "Michael Rodriguez",
+                  role: "Founder, GrowthCo",
+                },
+                {
+                  quote:
+                    "Professional, creative, and results-driven. They truly understand marketing.",
+                  author: "Emily Watson",
+                  role: "CMO, Innovate Labs",
+                },
+                {
+                  quote:
+                    "Our revenue doubled in 6 months thanks to their strategic approach.",
+                  author: "David Kim",
+                  role: "VP Marketing, ScaleUp Co",
+                },
+              ]).map((testimonial, idx) => (
+                <div
+                  key={idx}
+                  className="mx-4 inline-block w-[380px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm"
+                >
+                  <div className="flex items-center gap-1 mb-3 flex-wrap">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-primary text-lg">
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-base mb-4 break-words whitespace-normal">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex-shrink-0" />
+                    <div className="min-w-0">
+                      <div className="font-semibold truncate">{testimonial.author}</div>
+                      <div className="text-sm text-muted-foreground truncate">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </AnimatedSection>
+              ))}
+            </ScrollVelocityRow>
 
-            <AnimatedSection delay={0.2}>
-              <div className="bg-background p-8 rounded-2xl h-full">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-xl">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-lg mb-4">
-                  "The ROI speaks for itself. Best marketing investment we've
-                  ever made. Highly recommend!"
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10" />
-                  <div>
-                    <div className="font-semibold">Michael Rodriguez</div>
-                    <div className="text-sm text-muted-foreground">
-                      Founder, GrowthCo
+            <ScrollVelocityRow baseVelocity={1} direction={-1} className="py-4">
+              {[...Array(3)].flatMap(() => [
+                {
+                  quote:
+                    "Incredible results from day one. Their team is responsive and invested in our success.",
+                  author: "Lisa Martinez",
+                  role: "Director, Growth Inc",
+                },
+                {
+                  quote:
+                    "Finally found a marketing partner that delivers. ROI has been exceptional.",
+                  author: "James Wilson",
+                  role: "Founder, StartupXYZ",
+                },
+                {
+                  quote:
+                    "The best decision we made this year. Our brand visibility has increased dramatically.",
+                  author: "Amanda Foster",
+                  role: "CEO, BrandCo",
+                },
+                {
+                  quote:
+                    "Professional, data-driven, and creative. Exactly what we needed to level up.",
+                  author: "Robert Chen",
+                  role: "CMO, TechVentures",
+                },
+              ]).map((testimonial, idx) => (
+                <div
+                  key={idx}
+                  className="mx-4 inline-block w-[380px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm"
+                >
+                  <div className="flex items-center gap-1 mb-3 flex-wrap">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-primary text-lg">
+                        ★
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-base mb-4 break-words whitespace-normal">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded-full bg-primary/10 flex-shrink-0" />
+                    <div className="min-w-0">
+                      <div className="font-semibold truncate">{testimonial.author}</div>
+                      <div className="text-sm text-muted-foreground truncate">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </AnimatedSection>
+              ))}
+            </ScrollVelocityRow>
+          </ScrollVelocityContainer>
 
-            <AnimatedSection delay={0.3}>
-              <div className="bg-background p-8 rounded-2xl h-full">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="text-primary text-xl">
-                      ★
-                    </span>
-                  ))}
-                </div>
-                <p className="text-lg mb-4">
-                  "Professional, creative, and results-driven. They truly
-                  understand modern marketing."
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10" />
-                  <div>
-                    <div className="font-semibold">Emily Watson</div>
-                    <div className="text-sm text-muted-foreground">
-                      CMO, Innovate Labs
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-muted"></div>
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-muted"></div>
         </div>
       </section>
 
