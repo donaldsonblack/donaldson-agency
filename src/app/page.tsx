@@ -7,17 +7,20 @@ import {
   Zap,
 } from "lucide-react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import {
   AnimatedSection,
-  FadeIn,
   ScaleIn,
 } from "@/components/animated-section";
-import { TimelineWithBeam } from "@/components/timeline-with-beam";
-import {
-  ScrollVelocityContainer,
-  ScrollVelocityRow,
-} from "@/components/ui/scroll-based-velocity";
-import { CustomerNotifications } from "@/components/customer-notifications";
+
+// Lazy load heavy components that are below the fold
+const TimelineWithBeam = dynamic(() => import("@/components/timeline-with-beam").then(mod => ({ default: mod.TimelineWithBeam })));
+
+const ScrollVelocityContainer = dynamic(() => import("@/components/ui/scroll-based-velocity").then(mod => ({ default: mod.ScrollVelocityContainer })));
+
+const ScrollVelocityRow = dynamic(() => import("@/components/ui/scroll-based-velocity").then(mod => ({ default: mod.ScrollVelocityRow })));
+
+const CustomerNotifications = dynamic(() => import("@/components/customer-notifications").then(mod => ({ default: mod.CustomerNotifications })));
 
 export default function Home() {
   return (
@@ -72,25 +75,19 @@ export default function Home() {
       <section className="pt-32 pb-20 px-4" aria-labelledby="hero-heading">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-6">
-            <FadeIn delay={0.1}>
-              <div className="inline-block px-4 py-1.5 bg-muted rounded-full text-sm font-medium mb-4">
-                🚀 Trusted by 500+ growing businesses
-              </div>
-            </FadeIn>
-            <AnimatedSection delay={0.2}>
-              <h1 id="hero-heading" className="text-5xl md:text-7xl font-bold tracking-tight">
-                The #1 pilot-trusted
-                <br />
-                <span className="text-primary">marketing partner</span>
-              </h1>
-            </AnimatedSection>
-            <AnimatedSection delay={0.3}>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Everything you need to grow your business, scale your brand, and
-                dominate your market. Built by marketers, for ambitious
-                businesses.
-              </p>
-            </AnimatedSection>
+            <div className="inline-block px-4 py-1.5 bg-muted rounded-full text-sm font-medium mb-4">
+              🚀 Trusted by 500+ growing businesses
+            </div>
+            <h1 id="hero-heading" className="text-5xl md:text-7xl font-bold tracking-tight">
+              The #1 pilot-trusted
+              <br />
+              <span className="text-primary">marketing partner</span>
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to grow your business, scale your brand, and
+              dominate your market. Built by marketers, for ambitious
+              businesses.
+            </p>
             <AnimatedSection delay={0.4}>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
                 <Link
