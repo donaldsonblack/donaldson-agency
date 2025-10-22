@@ -34,6 +34,7 @@ export function ScrollVelocityContainer({
   className,
   ...props
 }: React.HTMLAttributes<HTMLDivElement>) {
+  const [mounted, setMounted] = useState(false)
   const { scrollY } = useScroll()
   const scrollVelocity = useVelocity(scrollY)
   const smoothVelocity = useSpring(scrollVelocity, {
@@ -45,6 +46,18 @@ export function ScrollVelocityContainer({
     const magnitude = Math.min(5, (Math.abs(v) / 1000) * 5)
     return sign * magnitude
   })
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <div className={cn("relative w-full", className)} {...props}>
+        {children}
+      </div>
+    )
+  }
 
   return (
     <ScrollVelocityContext.Provider value={velocityFactor}>
@@ -144,7 +157,9 @@ function ScrollVelocityRowImpl({
   })
 
   useAnimationFrame((_, delta) => {
+    if (!containerRef.current || !blockRef.current) return
     if (!isInViewRef.current || !isPageVisibleRef.current) return
+
     const dt = delta / 1000
     const vf = velocityFactor.get()
     const absVf = Math.min(5, Math.abs(vf))

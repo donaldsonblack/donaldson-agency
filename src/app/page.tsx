@@ -17,6 +17,7 @@ import {
   ScrollVelocityContainer,
   ScrollVelocityRow,
 } from "@/components/ui/scroll-based-velocity";
+import { CustomerNotifications } from "@/components/customer-notifications";
 
 export default function Home() {
   return (
@@ -61,30 +62,29 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center space-y-6">
+      <section className="relative bg-background py-16 lg:flex lg:min-h-[700px] lg:items-center lg:py-24">
+        <div className="mx-auto flex w-full max-w-7xl items-center px-4 md:px-8">
+          <div className="flex flex-col items-start md:max-w-3xl lg:w-1/2 lg:pr-8">
             <FadeIn delay={0.1}>
               <div className="inline-block px-4 py-1.5 bg-muted rounded-full text-sm font-medium mb-4">
                 🚀 Trusted by 500+ growing businesses
               </div>
             </FadeIn>
+
             <AnimatedSection delay={0.2}>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-                The #1 pilot-trusted
-                <br />
-                <span className="text-primary">marketing partner</span>
+              <h1 className="mt-4 text-5xl font-bold tracking-tight md:text-6xl lg:text-7xl">
+                People who care about your growth
               </h1>
             </AnimatedSection>
+
             <AnimatedSection delay={0.3}>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Everything you need to grow your business, scale your brand, and
-                dominate your market. Built by marketers, for ambitious
-                businesses.
+              <p className="mt-4 text-lg text-muted-foreground md:mt-6 md:max-w-lg md:text-xl">
+                Powerful, data-driven marketing and growth strategies to help you convert, engage, and retain more customers.
               </p>
             </AnimatedSection>
+
             <AnimatedSection delay={0.4}>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+              <div className="mt-8 flex w-full flex-col items-stretch gap-4 md:mt-12 md:max-w-md md:flex-row md:items-start">
                 <Link
                   href="/contact"
                   className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
@@ -100,29 +100,34 @@ export default function Home() {
                 </Link>
               </div>
             </AnimatedSection>
-          </div>
 
-          {/* Hero Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
+            {/* Hero Stats */}
+            <div className="mt-12 grid grid-cols-2 gap-8 md:grid-cols-4 lg:mt-16">
+              <AnimatedSection delay={0.5}>
+                <div className="text-3xl font-bold md:text-4xl">500+</div>
+                <div className="text-muted-foreground mt-1 text-sm">Happy Clients</div>
+              </AnimatedSection>
+              <AnimatedSection delay={0.6}>
+                <div className="text-3xl font-bold md:text-4xl">250%</div>
+                <div className="text-muted-foreground mt-1 text-sm">Avg ROI</div>
+              </AnimatedSection>
+              <AnimatedSection delay={0.7}>
+                <div className="text-3xl font-bold md:text-4xl">$50M+</div>
+                <div className="text-muted-foreground mt-1 text-sm">Revenue Generated</div>
+              </AnimatedSection>
+              <AnimatedSection delay={0.8}>
+                <div className="text-3xl font-bold md:text-4xl">98%</div>
+                <div className="text-muted-foreground mt-1 text-sm">Satisfaction Rate</div>
+              </AnimatedSection>
+            </div>
+          </div>
+        </div>
+
+        {/* Right side - iPhone mockup */}
+        <div className="relative mt-16 h-[500px] w-full px-4 md:h-[600px] md:px-8 lg:absolute lg:inset-y-0 lg:right-0 lg:mt-0 lg:h-full lg:w-1/2 lg:px-0 lg:flex lg:items-center lg:justify-center">
+          <div className="h-full w-full flex items-center justify-center lg:justify-end lg:pr-12">
             <AnimatedSection delay={0.5}>
-              <div className="text-4xl font-bold">500+</div>
-              <div className="text-muted-foreground mt-1">Happy Clients</div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.6}>
-              <div className="text-4xl font-bold">250%</div>
-              <div className="text-muted-foreground mt-1">Avg ROI</div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.7}>
-              <div className="text-4xl font-bold">$50M+</div>
-              <div className="text-muted-foreground mt-1">
-                Revenue Generated
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.8}>
-              <div className="text-4xl font-bold">98%</div>
-              <div className="text-muted-foreground mt-1">
-                Satisfaction Rate
-              </div>
+              <CustomerNotifications />
             </AnimatedSection>
           </div>
         </div>
@@ -523,6 +528,24 @@ export default function Home() {
             </div>
             </AnimatedSection>
           </div>
+        </div>
+      </section>
+
+      {/* Real-Time Results */}
+      <section className="py-20 px-4 bg-background">
+        <div className="container mx-auto max-w-6xl">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Real-time results you can see
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Stay updated with instant notifications as your campaigns drive leads, conversions, and growth
+            </p>
+          </AnimatedSection>
+
+          <AnimatedSection delay={0.2}>
+            <CustomerNotifications />
+          </AnimatedSection>
         </div>
       </section>
 

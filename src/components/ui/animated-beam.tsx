@@ -47,6 +47,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
   const id = useId()
   const [pathD, setPathD] = useState("")
   const [svgDimensions, setSvgDimensions] = useState({ width: 0, height: 0 })
+  const [mounted, setMounted] = useState(false)
 
   // Calculate the gradient coordinates based on the reverse prop
   const gradientCoordinates = reverse
@@ -64,6 +65,12 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
       }
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+
     const updatePath = () => {
       if (containerRef.current && fromRef.current && toRef.current) {
         const containerRect = containerRef.current.getBoundingClientRect()
@@ -109,6 +116,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
       resizeObserver.disconnect()
     }
   }, [
+    mounted,
     containerRef,
     fromRef,
     toRef,
@@ -118,6 +126,10 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
     endXOffset,
     endYOffset,
   ])
+
+  if (!mounted) {
+    return null
+  }
 
   return (
     <svg
