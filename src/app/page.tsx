@@ -22,39 +22,45 @@ import { CustomerNotifications } from "@/components/customer-notifications";
 export default function Home() {
   return (
     <div className="min-h-screen overflow-hidden">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded">
+        Skip to main content
+      </a>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-          <div className="text-2xl font-bold">Donaldson</div>
-          <div className="hidden md:flex items-center gap-8">
+        <nav className="container mx-auto px-4 h-16 flex items-center justify-between" aria-label="Main navigation">
+          <Link href="/" className="text-2xl font-bold" aria-label="Donaldson Agency Home">
+            Donaldson
+          </Link>
+          <div className="hidden md:flex items-center gap-8" role="navigation">
             <Link
               href="#services"
-              className="text-sm hover:text-primary transition-colors"
+              className="text-sm hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
             >
               Services
             </Link>
             <Link
               href="#work"
-              className="text-sm hover:text-primary transition-colors"
+              className="text-sm hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
             >
               Work
             </Link>
             <Link
               href="#about"
-              className="text-sm hover:text-primary transition-colors"
+              className="text-sm hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="text-sm hover:text-primary transition-colors"
+              className="text-sm hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
             >
               Contact
             </Link>
           </div>
           <Link
             href="/contact"
-            className="bg-primary text-primary-foreground px-6 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity"
+            className="bg-primary text-primary-foreground px-6 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            aria-label="Get started with Donaldson Agency"
           >
             Get Started
           </Link>
@@ -62,7 +68,8 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4">
+      <main id="main-content">
+      <section className="pt-32 pb-20 px-4" aria-labelledby="hero-heading">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center space-y-6">
             <FadeIn delay={0.1}>
@@ -71,7 +78,7 @@ export default function Home() {
               </div>
             </FadeIn>
             <AnimatedSection delay={0.2}>
-              <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
+              <h1 id="hero-heading" className="text-5xl md:text-7xl font-bold tracking-tight">
                 The #1 pilot-trusted
                 <br />
                 <span className="text-primary">marketing partner</span>
@@ -675,10 +682,10 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section id="contact" className="py-20 px-4">
+      <section id="contact" className="py-20 px-4" aria-labelledby="cta-heading">
         <div className="container mx-auto max-w-4xl text-center">
           <AnimatedSection>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 id="cta-heading" className="text-4xl md:text-5xl font-bold mb-6">
               Ready to accelerate your growth?
             </h2>
             <p className="text-xl text-muted-foreground mb-8">
@@ -699,9 +706,10 @@ export default function Home() {
           </AnimatedSection>
         </div>
       </section>
+      </main>
 
       {/* Footer */}
-      <footer className="bg-card border-t border-border py-12 px-4">
+      <footer className="bg-card border-t border-border py-12 px-4" role="contentinfo">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
@@ -711,7 +719,7 @@ export default function Home() {
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Services</h4>
+              <div className="font-semibold mb-3">Services</div>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link href="#" className="hover:text-foreground">
@@ -731,7 +739,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Company</h4>
+              <div className="font-semibold mb-3">Company</div>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link href="#" className="hover:text-foreground">
@@ -751,7 +759,7 @@ export default function Home() {
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-3">Legal</h4>
+              <div className="font-semibold mb-3">Legal</div>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>
                   <Link href="#" className="hover:text-foreground">
