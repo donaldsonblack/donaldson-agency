@@ -4,6 +4,7 @@ import Script from "next/script";
 
 export function Analytics() {
   const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const adsConversionId = "AW-17729509807";
 
   if (!measurementId) {
     console.warn("GA Measurement ID not found");
@@ -24,6 +25,7 @@ export function Analytics() {
           gtag('config', '${measurementId}', {
             page_path: window.location.pathname,
           });
+          gtag('config', '${adsConversionId}');
         `}
       </Script>
     </>
