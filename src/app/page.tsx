@@ -1,6 +1,7 @@
 import {
   ArrowRight,
   BarChart3,
+  CircleCheckBig,
   Sparkles,
   Target,
   TrendingUp,
@@ -106,30 +107,33 @@ export default function Home() {
           </div>
 
           {/* Hero Features */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20 max-w-5xl mx-auto">
-            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
-              <h3 className="text-xl font-bold mb-3">100% Trackable Results</h3>
-              <p className="text-muted-foreground">
-                Every campaign includes call logs, booking data & transparent reporting.
-              </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20 max-w-5xl mx-auto">
+            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors flex items-start gap-4">
+              <CircleCheckBig className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-bold mb-3">100% Trackable Results</h3>
+                <p className="text-muted-foreground">
+                  Every campaign includes call logs, booking data & transparent reporting.
+                </p>
+              </div>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
-              <h3 className="text-xl font-bold mb-3">AHPRA-Safe & Seasonality-Ready</h3>
-              <p className="text-muted-foreground">
-                Built specifically for Trades, Tourism & Health in the Top End.
-              </p>
+            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors flex items-start gap-4">
+              <CircleCheckBig className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-bold mb-3">90-Day Performance Promise</h3>
+                <p className="text-muted-foreground">
+                  If we don't deliver the agreed outcomes, month four is free.
+                </p>
+              </div>
             </div>
-            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
-              <h3 className="text-xl font-bold mb-3">90-Day Performance Promise</h3>
-              <p className="text-muted-foreground">
-                If we don't deliver the agreed outcomes, month four is free.
-              </p>
-            </div>
-            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
-              <h3 className="text-xl font-bold mb-3">Local Presence, Lean Team</h3>
-              <p className="text-muted-foreground">
-                One team member on the ground in Darwin, two remote specialists.
-              </p>
+            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors flex items-start gap-4">
+              <CircleCheckBig className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+              <div>
+                <h3 className="text-xl font-bold mb-3">Local Presence, Lean Team</h3>
+                <p className="text-muted-foreground">
+                  One team member on the ground in Darwin, two remote specialists.
+                </p>
+              </div>
             </div>
           </div>
         </div>
