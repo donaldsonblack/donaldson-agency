@@ -79,9 +79,7 @@ export default function Home() {
               🚀 Trusted by 500+ growing businesses
             </div>
             <h1 id="hero-heading" className="text-5xl md:text-7xl font-bold tracking-tight">
-              The #1 pilot-trusted
-              <br />
-              <span className="text-primary">marketing partner</span>
+              Darwin's Performance Partner for Trades, Tourism & Health
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Everything you need to grow your business, scale your brand, and
@@ -107,28 +105,32 @@ export default function Home() {
             </AnimatedSection>
           </div>
 
-          {/* Hero Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 text-center">
-            <AnimatedSection delay={0.5}>
-              <div className="text-4xl font-bold">500+</div>
-              <div className="text-muted-foreground mt-1">Happy Clients</div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.6}>
-              <div className="text-4xl font-bold">250%</div>
-              <div className="text-muted-foreground mt-1">Avg ROI</div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.7}>
-              <div className="text-4xl font-bold">$50M+</div>
-              <div className="text-muted-foreground mt-1">
-                Revenue Generated
-              </div>
-            </AnimatedSection>
-            <AnimatedSection delay={0.8}>
-              <div className="text-4xl font-bold">98%</div>
-              <div className="text-muted-foreground mt-1">
-                Satisfaction Rate
-              </div>
-            </AnimatedSection>
+          {/* Hero Features */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-20 max-w-5xl mx-auto">
+            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
+              <h3 className="text-xl font-bold mb-3">100% Trackable Results</h3>
+              <p className="text-muted-foreground">
+                Every campaign includes call logs, booking data & transparent reporting.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
+              <h3 className="text-xl font-bold mb-3">AHPRA-Safe & Seasonality-Ready</h3>
+              <p className="text-muted-foreground">
+                Built specifically for Trades, Tourism & Health in the Top End.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
+              <h3 className="text-xl font-bold mb-3">90-Day Performance Promise</h3>
+              <p className="text-muted-foreground">
+                If we don't deliver the agreed outcomes, month four is free.
+              </p>
+            </div>
+            <div className="bg-card border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors">
+              <h3 className="text-xl font-bold mb-3">Local Presence, Lean Team</h3>
+              <p className="text-muted-foreground">
+                One team member on the ground in Darwin, two remote specialists.
+              </p>
+            </div>
           </div>
         </div>
       </section>
