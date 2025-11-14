@@ -638,18 +638,19 @@ export default function Home() {
 									.map((item, idx) => (
 										<div
 											key={idx}
-											className="mx-4 inline-flex w-[380px] min-h-[220px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm flex-col"
-											style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
+											className="mx-4 inline-block w-[380px] min-h-[220px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm"
 										>
-											<div className="flex items-start gap-3 mb-3 flex-shrink-0" style={{ width: '100%' }}>
-												<CircleCheckBig className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-												<h3 className="text-lg font-bold leading-tight min-w-0 flex-1" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
-													{item.title}
-												</h3>
+											<div className="flex flex-col" style={{ whiteSpace: 'normal' }}>
+												<div className="flex items-start gap-3 mb-3">
+													<CircleCheckBig className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+													<h3 className="text-lg font-bold leading-tight" style={{ wordWrap: 'break-word' }}>
+														{item.title}
+													</h3>
+												</div>
+												<p className="text-sm text-muted-foreground" style={{ wordWrap: 'break-word' }}>
+													{item.description}
+												</p>
 											</div>
-											<p className="text-sm text-muted-foreground" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', width: '100%' }}>
-												{item.description}
-											</p>
 										</div>
 									))}
 							</ScrollVelocityRow>
@@ -680,18 +681,19 @@ export default function Home() {
 									.map((item, idx) => (
 										<div
 											key={idx}
-											className="mx-4 inline-flex w-[380px] min-h-[220px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm flex-col"
-											style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
+											className="mx-4 inline-block w-[380px] min-h-[220px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm"
 										>
-											<div className="flex items-start gap-3 mb-3 flex-shrink-0" style={{ width: '100%' }}>
-												<CircleCheckBig className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-												<h3 className="text-lg font-bold leading-tight min-w-0 flex-1" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
-													{item.title}
-												</h3>
+											<div className="flex flex-col" style={{ whiteSpace: 'normal' }}>
+												<div className="flex items-start gap-3 mb-3">
+													<CircleCheckBig className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+													<h3 className="text-lg font-bold leading-tight" style={{ wordWrap: 'break-word' }}>
+														{item.title}
+													</h3>
+												</div>
+												<p className="text-sm text-muted-foreground" style={{ wordWrap: 'break-word' }}>
+													{item.description}
+												</p>
 											</div>
-											<p className="text-sm text-muted-foreground" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', width: '100%' }}>
-												{item.description}
-											</p>
 										</div>
 									))}
 							</ScrollVelocityRow>
