@@ -8,6 +8,7 @@ import {
 	Zap,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import { AnimatedSection, ScaleIn } from "@/components/animated-section";
 
@@ -228,8 +229,15 @@ export default function Home() {
 								</ul>
 							</AnimatedSection>
 							<AnimatedSection direction="right" delay={0.2}>
-								<div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center">
-									<BarChart3 className="w-48 h-48 text-primary/40" />
+								<div className="aspect-square rounded-2xl overflow-hidden">
+									<Image
+										src="/data-graph.jpg"
+										alt="Data-driven analytics and growth chart"
+										width={600}
+										height={600}
+										className="w-full h-full object-cover"
+										priority={false}
+									/>
 								</div>
 							</AnimatedSection>
 						</div>
@@ -663,7 +671,7 @@ export default function Home() {
 												"If we don't deliver the agreed outcomes, month four is free — no questions asked.",
 										},
 										{
-											title: "Local Presence + Lean, High-Skill Team",
+											title: "Local Presence + High-Skill Team",
 											description:
 												"One founder on the ground in Darwin; two specialists handling strategy, tech, and finance ops.",
 										},
