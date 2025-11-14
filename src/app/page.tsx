@@ -555,132 +555,90 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Social Proof */}
-      <section className="bg-muted py-20 px-4 overflow-hidden">
-        <div className="container mx-auto max-w-6xl mb-12">
-          <AnimatedSection className="text-center">
+      {/* Why Top End Businesses Choose Donaldson */}
+      <section className="bg-muted py-20 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <AnimatedSection className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Trusted by industry leaders
+              Why Top End Businesses Choose Donaldson
             </h2>
-            <p className="text-xl text-muted-foreground">
-              Join hundreds of successful businesses growing with Donaldson
-            </p>
           </AnimatedSection>
-        </div>
 
-        <div className="relative flex w-full flex-col items-center justify-center">
-          <ScrollVelocityContainer className="w-full">
-            <ScrollVelocityRow baseVelocity={1} direction={1} className="py-4">
-              {[...Array(3)].flatMap(() => [
-                {
-                  quote:
-                    "Donaldson transformed our digital presence. We saw a 300% increase in qualified leads.",
-                  author: "Sarah Chen",
-                  role: "CEO, TechStart Inc",
-                },
-                {
-                  quote:
-                    "The ROI speaks for itself. Best marketing investment we've ever made.",
-                  author: "Michael Rodriguez",
-                  role: "Founder, GrowthCo",
-                },
-                {
-                  quote:
-                    "Professional, creative, and results-driven. They truly understand marketing.",
-                  author: "Emily Watson",
-                  role: "CMO, Innovate Labs",
-                },
-                {
-                  quote:
-                    "Our revenue doubled in 6 months thanks to their strategic approach.",
-                  author: "David Kim",
-                  role: "VP Marketing, ScaleUp Co",
-                },
-              ]).map((testimonial, idx) => (
-                <div
-                  key={idx}
-                  className="mx-4 inline-block w-[380px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm"
-                >
-                  <div className="flex items-center gap-1 mb-3 flex-wrap">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-primary text-lg">
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-base mb-4 break-words whitespace-normal">
-                    &ldquo;{testimonial.quote}&rdquo;
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            <AnimatedSection delay={0.1}>
+              <div className="bg-background border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors flex items-start gap-4 h-full">
+                <CircleCheckBig className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Built for Darwin, Not the East Coast</h3>
+                  <p className="text-muted-foreground">
+                    Every strategy we use is shaped around local seasonality, weather patterns, and how business is actually done in the Territory.
+                    <br />
+                    <span className="text-sm italic">(Trades, Tourism, Health — our three validated niches.)</span>
                   </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex-shrink-0" />
-                    <div className="min-w-0">
-                      <div className="font-semibold truncate">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground truncate">
-                        {testimonial.role}
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              ))}
-            </ScrollVelocityRow>
+              </div>
+            </AnimatedSection>
 
-            <ScrollVelocityRow baseVelocity={1} direction={-1} className="py-4">
-              {[...Array(3)].flatMap(() => [
-                {
-                  quote:
-                    "Incredible results from day one. Their team is responsive and invested in our success.",
-                  author: "Lisa Martinez",
-                  role: "Director, Growth Inc",
-                },
-                {
-                  quote:
-                    "Finally found a marketing partner that delivers. ROI has been exceptional.",
-                  author: "James Wilson",
-                  role: "Founder, StartupXYZ",
-                },
-                {
-                  quote:
-                    "The best decision we made this year. Our brand visibility has increased dramatically.",
-                  author: "Amanda Foster",
-                  role: "CEO, BrandCo",
-                },
-                {
-                  quote:
-                    "Professional, data-driven, and creative. Exactly what we needed to level up.",
-                  author: "Robert Chen",
-                  role: "CMO, TechVentures",
-                },
-              ]).map((testimonial, idx) => (
-                <div
-                  key={idx}
-                  className="mx-4 inline-block w-[380px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm"
-                >
-                  <div className="flex items-center gap-1 mb-3 flex-wrap">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-primary text-lg">
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                  <p className="text-base mb-4 break-words whitespace-normal">
-                    &ldquo;{testimonial.quote}&rdquo;
+            <AnimatedSection delay={0.15}>
+              <div className="bg-background border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors flex items-start gap-4 h-full">
+                <CircleCheckBig className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-3">100% Trackable Results</h3>
+                  <p className="text-muted-foreground">
+                    Every campaign includes call logs, booking data, and transparent reporting. No guesswork.
                   </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex-shrink-0" />
-                    <div className="min-w-0">
-                      <div className="font-semibold truncate">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground truncate">
-                        {testimonial.role}
-                      </div>
-                    </div>
-                  </div>
                 </div>
-              ))}
-            </ScrollVelocityRow>
-          </ScrollVelocityContainer>
+              </div>
+            </AnimatedSection>
 
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-muted"></div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-muted"></div>
+            <AnimatedSection delay={0.2}>
+              <div className="bg-background border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors flex items-start gap-4 h-full">
+                <CircleCheckBig className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Low-Risk, Proof-First Engagements</h3>
+                  <p className="text-muted-foreground">
+                    Our Foot-In-The-Door audits offer quick wins before you commit to any retainer.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.25}>
+              <div className="bg-background border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors flex items-start gap-4 h-full">
+                <CircleCheckBig className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-3">AHPRA-Safe & Compliance-First for Health</h3>
+                  <p className="text-muted-foreground">
+                    A unique gap in the Darwin market that no other agency addresses.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.3}>
+              <div className="bg-background border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors flex items-start gap-4 h-full">
+                <CircleCheckBig className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-3">90-Day Performance Promise</h3>
+                  <p className="text-muted-foreground">
+                    If we don't deliver the agreed outcomes, month four is free — no questions asked.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.35}>
+              <div className="bg-background border border-border rounded-2xl p-6 hover:border-primary/50 transition-colors flex items-start gap-4 h-full">
+                <CircleCheckBig className="w-8 h-8 text-green-500 flex-shrink-0 mt-1" />
+                <div>
+                  <h3 className="text-xl font-bold mb-3">Local Presence + Lean, High-Skill Team</h3>
+                  <p className="text-muted-foreground">
+                    One founder on the ground in Darwin; two specialists handling strategy, tech, and finance ops.
+                  </p>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
