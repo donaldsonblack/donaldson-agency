@@ -114,7 +114,7 @@ export function ContactForm() {
           required
           rows={5}
           className="w-full px-4 py-3 rounded-lg border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
-          placeholder="Tell us about your project..."
+          placeholder="Tell us about how we can help"
         />
       </div>
 
