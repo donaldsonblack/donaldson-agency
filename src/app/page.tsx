@@ -57,7 +57,7 @@ export default function Home() {
 						className="text-2xl font-bold"
 						aria-label="Donaldson Agency Home"
 					>
-						Donaldson
+						Donaldson Marketing
 					</Link>
 					<div className="hidden md:flex items-center gap-8" role="navigation">
 						<Link
@@ -638,15 +638,16 @@ export default function Home() {
 									.map((item, idx) => (
 										<div
 											key={idx}
-											className="mx-4 inline-block w-[380px] h-[180px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm flex flex-col"
+											className="mx-4 inline-flex w-[380px] min-h-[220px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm flex-col"
+											style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
 										>
-											<div className="flex items-start gap-3 mb-3 flex-shrink-0">
+											<div className="flex items-start gap-3 mb-3 flex-shrink-0" style={{ width: '100%' }}>
 												<CircleCheckBig className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-												<h3 className="text-lg font-bold leading-tight">
+												<h3 className="text-lg font-bold leading-tight min-w-0 flex-1" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
 													{item.title}
 												</h3>
 											</div>
-											<p className="text-sm text-muted-foreground break-words overflow-hidden flex-1">
+											<p className="text-sm text-muted-foreground" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', width: '100%' }}>
 												{item.description}
 											</p>
 										</div>
@@ -679,15 +680,16 @@ export default function Home() {
 									.map((item, idx) => (
 										<div
 											key={idx}
-											className="mx-4 inline-block w-[380px] h-[180px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm flex flex-col"
+											className="mx-4 inline-flex w-[380px] min-h-[220px] flex-shrink-0 bg-background p-6 rounded-2xl shadow-sm flex-col"
+											style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}
 										>
-											<div className="flex items-start gap-3 mb-3 flex-shrink-0">
+											<div className="flex items-start gap-3 mb-3 flex-shrink-0" style={{ width: '100%' }}>
 												<CircleCheckBig className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
-												<h3 className="text-lg font-bold leading-tight">
+												<h3 className="text-lg font-bold leading-tight min-w-0 flex-1" style={{ wordBreak: 'break-word', overflowWrap: 'break-word' }}>
 													{item.title}
 												</h3>
 											</div>
-											<p className="text-sm text-muted-foreground break-words overflow-hidden flex-1">
+											<p className="text-sm text-muted-foreground" style={{ wordBreak: 'break-word', overflowWrap: 'break-word', width: '100%' }}>
 												{item.description}
 											</p>
 										</div>
@@ -742,7 +744,7 @@ export default function Home() {
 				<div className="container mx-auto max-w-6xl">
 					<div className="grid md:grid-cols-4 gap-8 mb-8">
 						<div>
-							<div className="text-2xl font-bold mb-4">Donaldson</div>
+							<div className="text-2xl font-bold mb-4">Donaldson Marketing</div>
 							<p className="text-sm text-muted-foreground">
 								Marketing excellence for ambitious businesses
 							</p>

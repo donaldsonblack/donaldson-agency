@@ -181,7 +181,7 @@ function ScrollVelocityRowImpl({
   return (
     <div
       ref={containerRef}
-      className={cn("w-full overflow-hidden whitespace-nowrap", className)}
+      className={cn("w-full overflow-hidden", className)}
       {...props}
     >
       <motion.div
@@ -193,7 +193,7 @@ function ScrollVelocityRowImpl({
             key={i}
             ref={i === 0 ? blockRef : null}
             aria-hidden={i !== 0}
-            className="inline-flex shrink-0 items-center"
+            className="inline-flex shrink-0 items-start"
           >
             {children}
           </div>
