@@ -12,11 +12,16 @@ declare global {
 export const GA_MEASUREMENT_ID = "G-SXX8QKDWQ0";
 export const ADS_CONVERSION_ID = "AW-17729509807";
 
-// Google Ads Conversion Labels (you'll need to create these in Google Ads)
+// Google Ads Conversion Labels
+// Get these from your Google Ads account after creating conversion actions
+// See GOOGLE-ADS-SETUP.md for instructions
 export const CONVERSION_LABELS = {
-  CONTACT_FORM: "REPLACE_WITH_CONTACT_LABEL", // Create in Google Ads
-  PHONE_CLICK: "REPLACE_WITH_PHONE_LABEL", // Create in Google Ads
-  EMAIL_CLICK: "REPLACE_WITH_EMAIL_LABEL", // Create in Google Ads
+  CONTACT_FORM:
+    process.env.NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL || "not-configured",
+  PHONE_CLICK:
+    process.env.NEXT_PUBLIC_GOOGLE_ADS_PHONE_LABEL || "not-configured",
+  EMAIL_CLICK:
+    process.env.NEXT_PUBLIC_GOOGLE_ADS_EMAIL_LABEL || "not-configured",
 };
 
 /**
@@ -222,8 +227,8 @@ export const trackPhoneClick = (phoneNumber: string) => {
     event_label: phoneNumber,
   });
 
-  // Track as Google Ads conversion
-  if (CONVERSION_LABELS.PHONE_CLICK !== "REPLACE_WITH_PHONE_LABEL") {
+  // Track as Google Ads conversion (only if configured)
+  if (CONVERSION_LABELS.PHONE_CLICK !== "not-configured") {
     trackConversion(CONVERSION_LABELS.PHONE_CLICK, 50);
   }
 };
@@ -237,8 +242,8 @@ export const trackEmailClick = (emailAddress: string) => {
     event_label: emailAddress,
   });
 
-  // Track as Google Ads conversion
-  if (CONVERSION_LABELS.EMAIL_CLICK !== "REPLACE_WITH_EMAIL_LABEL") {
+  // Track as Google Ads conversion (only if configured)
+  if (CONVERSION_LABELS.EMAIL_CLICK !== "not-configured") {
     trackConversion(CONVERSION_LABELS.EMAIL_CLICK, 50);
   }
 };
