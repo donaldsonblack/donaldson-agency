@@ -135,6 +135,10 @@ export const trackContactFormSubmission = (
   },
   value = 100 // Default lead value
 ) => {
+  console.log("🎯 Tracking contact form submission...");
+  console.log("Conversion Label:", CONVERSION_LABELS.CONTACT_FORM);
+  console.log("Ads Conversion ID:", ADS_CONVERSION_ID);
+
   // Track as GA4 event
   trackEvent("generate_lead", {
     event_category: "engagement",
@@ -147,16 +151,41 @@ export const trackContactFormSubmission = (
   const [firstName, ...lastNameParts] = formData.name.split(" ");
   const lastName = lastNameParts.join(" ");
 
-  trackEnhancedConversion(
-    CONVERSION_LABELS.CONTACT_FORM,
-    {
-      email: formData.email,
-      phone: formData.phone,
-      firstName: firstName,
-      lastName: lastName,
-    },
-    value
-  );
+  // Use direct conversion tracking with the proper format
+  if (
+    typeof window !== "undefined" &&
+    typeof window.gtag !== "undefined" &&
+    CONVERSION_LABELS.CONTACT_FORM !== "not-configured"
+  ) {
+    // Send conversion event
+    window.gtag("event", "conversion", {
+      send_to: `${ADS_CONVERSION_ID}/${CONVERSION_LABELS.CONTACT_FORM}`,
+      value: value,
+      currency: "USD",
+      transaction_id: "",
+    });
+
+    console.log("✅ Conversion tracked:", {
+      send_to: `${ADS_CONVERSION_ID}/${CONVERSION_LABELS.CONTACT_FORM}`,
+      value: value,
+    });
+
+    // Send enhanced conversion data separately
+    window.gtag("set", "user_data", {
+      email: formData.email?.toLowerCase().trim(),
+      phone_number: formData.phone,
+      address: {
+        first_name: firstName?.toLowerCase(),
+        last_name: lastName?.toLowerCase(),
+      },
+    });
+
+    console.log("✅ Enhanced conversion data set");
+  } else {
+    console.warn(
+      "⚠️ Conversion not tracked - label not configured or gtag not available"
+    );
+  }
 };
 
 /**
