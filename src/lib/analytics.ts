@@ -151,26 +151,32 @@ export const trackContactFormSubmission = (
   const [firstName, ...lastNameParts] = formData.name.split(" ");
   const lastName = lastNameParts.join(" ");
 
-  // Use direct conversion tracking with the proper format
-  if (
-    typeof window !== "undefined" &&
-    typeof window.gtag !== "undefined" &&
-    CONVERSION_LABELS.CONTACT_FORM !== "not-configured"
-  ) {
-    // Send conversion event
+  // Wait a bit for gtag to be available, then send conversion
+  setTimeout(() => {
+    if (typeof window.gtag === "undefined") {
+      console.error("❌ gtag is not defined!");
+      return;
+    }
+
+    if (CONVERSION_LABELS.CONTACT_FORM === "not-configured") {
+      console.warn("⚠️ Conversion label not configured");
+      return;
+    }
+
+    const sendTo = `${ADS_CONVERSION_ID}/${CONVERSION_LABELS.CONTACT_FORM}`;
+    console.log("📤 Sending conversion to:", sendTo);
+
+    // Send conversion event to Google Ads
     window.gtag("event", "conversion", {
-      send_to: `${ADS_CONVERSION_ID}/${CONVERSION_LABELS.CONTACT_FORM}`,
+      send_to: sendTo,
       value: value,
       currency: "USD",
       transaction_id: "",
     });
 
-    console.log("✅ Conversion tracked:", {
-      send_to: `${ADS_CONVERSION_ID}/${CONVERSION_LABELS.CONTACT_FORM}`,
-      value: value,
-    });
+    console.log("✅ Conversion event sent to Google Ads");
 
-    // Send enhanced conversion data separately
+    // Send enhanced conversion data
     window.gtag("set", "user_data", {
       email: formData.email?.toLowerCase().trim(),
       phone_number: formData.phone,
@@ -181,11 +187,7 @@ export const trackContactFormSubmission = (
     });
 
     console.log("✅ Enhanced conversion data set");
-  } else {
-    console.warn(
-      "⚠️ Conversion not tracked - label not configured or gtag not available"
-    );
-  }
+  }, 100); // Small delay to ensure gtag is loaded
 };
 
 /**
