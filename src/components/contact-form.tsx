@@ -3,6 +3,7 @@
 import { Send } from "lucide-react";
 import { useState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
+import { trackContactFormSubmission } from "@/lib/analytics";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -39,6 +40,18 @@ export function ContactForm() {
         type: "success",
         text: "Thank you! We'll be in touch soon.",
       });
+
+      // Track conversion for successful form submission
+      trackContactFormSubmission(
+        {
+          name: formValues.name,
+          email: formValues.email,
+          phone: formValues.phone,
+          company: formValues.company,
+        },
+        100 // $100 estimated lead value - adjust based on your business
+      );
+
       form.reset();
     } else {
       setMessage({
