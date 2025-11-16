@@ -2,10 +2,12 @@
 
 import { Send } from "lucide-react";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { submitContactForm } from "@/app/actions/contact";
 import { trackContactFormSubmission } from "@/lib/analytics";
 
 export function ContactForm() {
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [message, setMessage] = useState<{
     type: "success" | "error";
@@ -36,23 +38,8 @@ export function ContactForm() {
     setIsSubmitting(false);
 
     if (result.success) {
-      setMessage({
-        type: "success",
-        text: "Thank you! We'll be in touch soon.",
-      });
-
-      // Track conversion for successful form submission
-      trackContactFormSubmission(
-        {
-          name: formValues.name,
-          email: formValues.email,
-          phone: formValues.phone,
-          company: formValues.company,
-        },
-        100 // $100 estimated lead value - adjust based on your business
-      );
-
-      form.reset();
+      // Redirect to thank-you page where conversion will be tracked
+      router.push("/contact/thank-you");
     } else {
       setMessage({
         type: "error",
