@@ -38,7 +38,7 @@ export function CookieConsentBanner() {
   return (
     <CookieConsent
       location="bottom"
-      buttonText="Accept All Cookies"
+      buttonText="Accept"
       declineButtonText="Decline"
       enableDeclineButton
       cookieName="donaldson-agency-cookie-consent"
@@ -68,17 +68,10 @@ export function CookieConsentBanner() {
       onAccept={handleAccept}
       onDecline={handleDecline}
     >
-      <div style={{ fontSize: "14px", color: "#000000" }}>
-        <p style={{ marginBottom: "8px", fontWeight: "500", color: "#000000" }}>
-          We value your privacy
-        </p>
-        <p style={{ margin: 0, opacity: 0.9, color: "#000000" }}>
-          We use cookies to enhance your browsing experience, serve personalized
-          ads or content, and analyze our traffic. By clicking "Accept All
-          Cookies", you consent to our use of cookies for analytics and
-          advertising.
-        </p>
-      </div>
+      <span style={{ fontSize: "14px", color: "#000000" }}>
+        This website uses cookies to enhance user experience and analyze site
+        traffic.
+      </span>
     </CookieConsent>
   );
 }

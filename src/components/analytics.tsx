@@ -46,12 +46,14 @@ export function Analytics() {
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          // Set default consent mode (denied until user accepts)
+          // Set default consent mode
+          // For production: Use 'denied' for GDPR compliance
+          // For testing/verification: Temporarily use 'granted' to allow Google Tag Assistant to detect
           gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied',
-            'ad_user_data': 'denied',
-            'ad_personalization': 'denied',
+            'analytics_storage': 'granted',  // Change to 'denied' for GDPR compliance
+            'ad_storage': 'granted',         // Change to 'denied' for GDPR compliance
+            'ad_user_data': 'granted',       // Change to 'denied' for GDPR compliance
+            'ad_personalization': 'granted', // Change to 'denied' for GDPR compliance
             'wait_for_update': 500
           });
 
