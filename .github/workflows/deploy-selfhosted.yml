@@ -1,21 +1,17 @@
-name: Deploy to Production (Self-Hosted)
+name: Build and Deploy
 
 on:
   push:
     branches: [main]
-  workflow_dispatch: # Allow manual triggers
-
-env:
-  DOCKER_IMAGE: donaldson-agency
-  DEPLOY_PATH: /opt/donaldson-agency
+  workflow_dispatch:
 
 jobs:
-  test:
-    name: Test & Build
-    runs-on: ubuntu-latest
+  setup:
+    name: Checkout and Setup
+    runs-on: [self-hosted, core-www-marketing-01]
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
@@ -25,146 +21,50 @@ jobs:
       - name: Post Setup Bun
         run: bun --version
 
-      - name: Cache Bun dependencies
-        uses: actions/cache@v4
-        with:
-          path: ~/.bun/install/cache
-          key: ${{ runner.os }}-bun-${{ hashFiles('**/bun.lockb') }}
-          restore-keys: |
-            ${{ runner.os }}-bun-
-
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+  lint:
+    name: Lint
+    runs-on: [self-hosted, core-www-marketing-01]
+    steps:
       - name: Run linter
         run: bun run lint
 
       - name: Type check
         run: bun x tsc --noEmit
 
+  build:
+    name: Build
+    runs-on: [self-hosted, core-www-marketing-01]
+    steps:
       - name: Build application
         run: bun run build
         env:
-          # Only public env vars needed at build time
           NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
           NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL: ${{ secrets.NEXT_PUBLIC_GOOGLE_ADS_CONTACT_LABEL }}
           NEXT_PUBLIC_GOOGLE_ADS_PHONE_LABEL: ${{ secrets.NEXT_PUBLIC_GOOGLE_ADS_PHONE_LABEL }}
           NEXT_PUBLIC_GOOGLE_ADS_EMAIL_LABEL: ${{ secrets.NEXT_PUBLIC_GOOGLE_ADS_EMAIL_LABEL }}
 
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          push: false
+          tags: donaldsonblack/donaldson-agency:latest
+
   deploy:
-    name: Deploy to Server
-    needs: test
-    runs-on: self-hosted  # Uses self-hosted runner on your network
-    if: github.ref == 'refs/heads/main'
-
+    name: Deploy
+    runs-on: [self-hosted, core-www-marketing-01]
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Deploy with rollback support
+      - name: Pull and Restart Compose
+        working-directory: /opt/curas/
         run: |
-          set -e
-
-          echo "🚀 Starting deployment..."
-          cd ${{ env.DEPLOY_PATH }}
-
-          # Store current image as backup
-          CURRENT_IMAGE=$(docker images -q ${{ env.DOCKER_IMAGE }}:latest)
-          if [ ! -z "$CURRENT_IMAGE" ]; then
-            echo "📦 Creating backup of current image..."
-            docker tag ${{ env.DOCKER_IMAGE }}:latest ${{ env.DOCKER_IMAGE }}:backup || true
-          fi
-
-          # Pull latest code
-          echo "📥 Pulling latest code..."
-          git fetch origin main
-          git reset --hard origin/main
-
-          # Build new image
-          echo "🔨 Building new Docker image..."
-          docker compose build --no-cache
-
-          # Stop current container
-          echo "🛑 Stopping current container..."
-          docker compose down || true
-
-          # Start new container
-          echo "▶️  Starting new container..."
-          docker compose up -d
-
-          # Wait for health check
-          echo "⏳ Waiting for container to be healthy..."
-          sleep 15
-
-          # Check if container is running and healthy
-          if docker compose ps | grep -q "Up"; then
-            if curl -f -s http://localhost:3000 > /dev/null; then
-              echo "✅ Deployment successful!"
-
-              # Clean up old backup
-              if [ ! -z "$CURRENT_IMAGE" ]; then
-                docker rmi ${{ env.DOCKER_IMAGE }}:backup 2>/dev/null || true
-              fi
-
-              # Clean up dangling images
-              docker image prune -f
-
-              exit 0
-            else
-              echo "❌ Health check failed - app not responding!"
-              exit 1
-            fi
-          else
-            echo "❌ Container failed to start!"
-            exit 1
-          fi
-
-      - name: Rollback on failure
-        if: failure()
-        run: |
-          set -e
-
-          echo "🔄 Deployment failed! Rolling back..."
-          cd ${{ env.DEPLOY_PATH }}
-
-          # Stop failed container
-          docker compose down || true
-
-          # Check if backup image exists
-          if docker images | grep -q "${{ env.DOCKER_IMAGE }}.*backup"; then
-            echo "📦 Restoring backup image..."
-
-            # Remove failed image
-            docker rmi ${{ env.DOCKER_IMAGE }}:latest 2>/dev/null || true
-
-            # Restore backup
-            docker tag ${{ env.DOCKER_IMAGE }}:backup ${{ env.DOCKER_IMAGE }}:latest
-
-            # Start old container
-            docker compose up -d
-
-            # Wait and verify
-            sleep 10
-
-            if docker compose ps | grep -q "Up"; then
-              echo "✅ Rollback successful! Service restored."
-            else
-              echo "❌ Rollback failed! Manual intervention required."
-              exit 1
-            fi
-          else
-            echo "⚠️  No backup image found. Manual intervention required."
-            exit 1
-          fi
-
-      - name: Notify on success
-        if: success()
-        run: |
-          echo "✅ Deployment completed successfully!"
-          echo "🌐 Site is live at your production URL"
-
-      - name: Notify on failure
-        if: failure()
-        run: |
-          echo "❌ Deployment failed and rollback was attempted"
-          echo "📧 Check your server logs for details"
+          docker compose pull
+          docker compose up -d --remove-orphans
+          docker image prune -f
