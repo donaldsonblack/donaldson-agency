@@ -2,10 +2,8 @@ version: "3.8"
 
 services:
   donaldson-agency:
-    build:
-      context: .
-      dockerfile: Dockerfile
-
+    image: donaldsonblack/donaldson-agency
+    
     # Do NOT use 'network: host' — use bridged Docker networking instead
     ports:
       - "3000:3000"
