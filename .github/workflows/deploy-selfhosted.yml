@@ -51,14 +51,17 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v3
-
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
           push: false
           tags: donaldsonblack/donaldson-agency:latest
+
+
+      - name: Build and tag Docker image
+        run: |
+          docker build --network=host \
+            -t donaldsonblack/donaldson-agency:latest .
 
   deploy:
     name: Deploy
