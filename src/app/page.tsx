@@ -6,11 +6,13 @@ import {
 	Target,
 	TrendingUp,
 	Zap,
+	ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { AnimatedSection, ScaleIn } from "@/components/animated-section";
+import { ServicesDropdown } from "@/components/services-dropdown";
 
 // Lazy load heavy components that are below the fold
 const TimelineWithBeam = dynamic(() =>
@@ -60,12 +62,7 @@ export default function Home() {
 						Donaldson Marketing
 					</Link>
 					<div className="hidden md:flex items-center gap-8" role="navigation">
-						<Link
-							href="#services"
-							className="text-sm hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
-						>
-							Services
-						</Link>
+						<ServicesDropdown />
 						<Link
 							href="#work"
 							className="text-sm hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
