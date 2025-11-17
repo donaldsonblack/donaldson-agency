@@ -1,15 +1,15 @@
-"use client"
+"use client";
 
-import { cn } from "@/lib/utils"
-import { AnimatedList } from "@/components/ui/animated-list"
-import { Iphone } from "@/components/ui/iphone"
+import { AnimatedList } from "@/components/ui/animated-list";
+import { Iphone } from "@/components/ui/iphone";
+import { cn } from "@/lib/utils";
 
 interface Item {
-  name: string
-  description: string
-  icon: string
-  color: string
-  time: string
+  name: string;
+  description: string;
+  icon: string;
+  color: string;
+  time: string;
 }
 
 let notifications = [
@@ -55,9 +55,9 @@ let notifications = [
     icon: "📱",
     color: "#06D6A0",
   },
-]
+];
 
-notifications = Array.from({ length: 10 }, () => notifications).flat()
+notifications = Array.from({ length: 10 }, () => notifications).flat();
 
 const Notification = ({ name, description, icon, color, time }: Item) => {
   return (
@@ -69,7 +69,7 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
         // light styles
         "bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
         // dark styles
-        "transform-gpu dark:bg-transparent dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)]"
+        "transform-gpu dark:bg-transparent dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)]",
       )}
     >
       <div className="flex flex-row items-center gap-3">
@@ -93,8 +93,8 @@ const Notification = ({ name, description, icon, color, time }: Item) => {
         </div>
       </div>
     </figure>
-  )
-}
+  );
+};
 
 export function CustomerNotifications() {
   return (
@@ -110,5 +110,5 @@ export function CustomerNotifications() {
         </div>
       </Iphone>
     </div>
-  )
+  );
 }

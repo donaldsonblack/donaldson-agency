@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import gsap from "gsap";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
+import { useEffect, useRef } from "react";
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {

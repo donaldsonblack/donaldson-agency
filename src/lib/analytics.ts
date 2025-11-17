@@ -40,7 +40,7 @@ export const trackPageView = (url: string) => {
  */
 export const trackEvent = (
   eventName: string,
-  eventParams?: Record<string, any>
+  eventParams?: Record<string, any>,
 ) => {
   if (typeof window.gtag !== "undefined") {
     window.gtag("event", eventName, eventParams);
@@ -53,7 +53,7 @@ export const trackEvent = (
 export const trackConversion = (
   conversionLabel: string,
   value?: number,
-  transactionId?: string
+  transactionId?: string,
 ) => {
   if (typeof window.gtag !== "undefined") {
     window.gtag("event", "conversion", {
@@ -83,7 +83,7 @@ export const trackEnhancedConversion = (
       country?: string;
     };
   },
-  value?: number
+  value?: number,
 ) => {
   if (typeof window.gtag !== "undefined") {
     // Hash user data for privacy (Google will handle this, but we can pre-hash)
@@ -117,7 +117,7 @@ export const trackEnhancedConversion = (
       send_to: `${ADS_CONVERSION_ID}/${conversionLabel}`,
       value: value || 0,
       currency: "USD",
-      // @ts-ignore - enhanced_conversion_data is valid but not in types
+      // @ts-expect-error - enhanced_conversion_data is valid but not in types
       enhanced_conversion_data: enhancedConversionData,
     });
   }
@@ -133,7 +133,7 @@ export const trackContactFormSubmission = (
     phone?: string;
     company?: string;
   },
-  value = 100 // Default lead value
+  value = 100, // Default lead value
 ) => {
   console.log("🎯 Tracking contact form submission...");
   console.log("Conversion Label:", CONVERSION_LABELS.CONTACT_FORM);
@@ -196,7 +196,7 @@ export const trackContactFormSubmission = (
 export const trackClick = (
   elementName: string,
   elementType: string,
-  destination?: string
+  destination?: string,
 ) => {
   trackEvent("click", {
     event_category: "engagement",

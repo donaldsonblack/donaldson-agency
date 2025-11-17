@@ -49,8 +49,8 @@ export default function ContactPage() {
               <div>
                 <h2 className="text-3xl font-bold mb-4">Get in touch</h2>
                 <p className="text-muted-foreground">
-                  Fill out the form and our team will get back to you within
-                  24 hours.
+                  Fill out the form and our team will get back to you within 24
+                  hours.
                 </p>
               </div>
 
@@ -76,13 +76,15 @@ export default function ContactPage() {
                     <p className="text-muted-foreground">+61 416 669 439</p>
                   </div>
                 </div>
-
               </div>
             </div>
 
             {/* Contact Form */}
             <div className="bg-card p-8 rounded-2xl border border-border">
-              <h3 className="text-2xl font-bold mb-6">Tell us about your business – we’ll get back to you within one business day.</h3>
+              <h3 className="text-2xl font-bold mb-6">
+                Tell us about your business – we’ll get back to you within one
+                business day.
+              </h3>
               <ContactForm />
             </div>
           </div>
@@ -96,8 +98,7 @@ export default function ContactPage() {
             Prefer to chat in person?
           </h2>
           <p className="text-lg text-muted-foreground mb-6">
-            Book a free 30-minute consultation with one of our marketing
-            experts
+            Book a free 30-minute consultation with one of our marketing experts
           </p>
           <Link
             href="#"

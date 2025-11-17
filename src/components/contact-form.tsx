@@ -1,10 +1,9 @@
 "use client";
 
 import { Send } from "lucide-react";
-import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { submitContactForm } from "@/app/actions/contact";
-import { trackContactFormSubmission } from "@/lib/analytics";
 
 export function ContactForm() {
   const router = useRouter();

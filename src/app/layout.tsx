@@ -103,7 +103,11 @@ export default function RootLayout({
           content="Powerful, data-driven marketing and growth strategies to help you convert, engage, and retain more customers. Trusted by 500+ growing businesses."
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

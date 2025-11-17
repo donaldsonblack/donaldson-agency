@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react";
-import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import * as React from "react";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -82,17 +82,26 @@ export function Navbar() {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink
+                asChild
+                className={navigationMenuTriggerStyle()}
+              >
                 <Link href="#work">Work</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink
+                asChild
+                className={navigationMenuTriggerStyle()}
+              >
                 <Link href="#about">About</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink
+                asChild
+                className={navigationMenuTriggerStyle()}
+              >
                 <Link href="/contact">Contact</Link>
               </NavigationMenuLink>
             </NavigationMenuItem>

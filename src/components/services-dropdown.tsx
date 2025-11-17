@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 
 export function ServicesDropdown() {
   const [isOpen, setIsOpen] = useState(false);

@@ -1,8 +1,9 @@
 "use client";
 
-import React, { forwardRef, useRef } from "react";
-import { cn } from "@/lib/utils";
+import type React from "react";
+import { forwardRef, useRef } from "react";
 import { AnimatedBeam } from "@/components/ui/animated-beam";
+import { cn } from "@/lib/utils";
 
 const Circle = forwardRef<
   HTMLDivElement,
@@ -13,7 +14,7 @@ const Circle = forwardRef<
       ref={ref}
       className={cn(
         "z-10 flex size-4 items-center justify-center rounded-full border-2 border-border bg-background",
-        className
+        className,
       )}
     >
       {children}

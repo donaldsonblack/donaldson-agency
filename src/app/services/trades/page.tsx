@@ -1,18 +1,18 @@
-import { Navbar } from "@/components/navbar";
-import { AnimatedCTAButton } from "@/components/animated-cta-button";
 import {
-  CheckCircle2,
+  AlertCircle,
   Calendar,
-  Phone,
-  Target,
-  TrendingUp,
-  Shield,
+  CheckCircle2,
   Clock,
   MapPin,
+  Phone,
+  Shield,
+  Target,
+  TrendingUp,
   Wrench,
-  AlertCircle,
 } from "lucide-react";
 import Link from "next/link";
+import { AnimatedCTAButton } from "@/components/animated-cta-button";
+import { Navbar } from "@/components/navbar";
 
 export default function TradesPage() {
   return (
@@ -573,9 +573,7 @@ export default function TradesPage() {
             <div className="space-y-4 mb-8">
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <p>
-                  One-off setup for landing page, tracking, review system.
-                </p>
+                <p>One-off setup for landing page, tracking, review system.</p>
               </div>
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
@@ -645,8 +643,9 @@ export default function TradesPage() {
               <p className="text-muted-foreground">
                 We rely on short pilots, performance-linked fees, and guarantees
                 instead of long contracts or vague promises. Because we're
-                building our reputation, we can't afford to hide behind retainers
-                – we have to deliver results you can see in your calendar.
+                building our reputation, we can't afford to hide behind
+                retainers – we have to deliver results you can see in your
+                calendar.
               </p>
             </div>
 
@@ -657,8 +656,8 @@ export default function TradesPage() {
               <p className="text-muted-foreground">
                 Generic campaigns fail when they ignore local realities. We only
                 work with Darwin/NT tradies and build around your specific
-                suburbs, services and margins. The campaigns are tuned for "Rapid
-                Creek plumber" not "Australian plumbing services."
+                suburbs, services and margins. The campaigns are tuned for
+                "Rapid Creek plumber" not "Australian plumbing services."
               </p>
             </div>
 
@@ -680,9 +679,9 @@ export default function TradesPage() {
               </h3>
               <p className="text-muted-foreground">
                 We define "qualified" in writing, listen to call recordings
-                together, and adjust targeting. You don't pay performance fees on
-                calls that clearly don't fit the rules. If lead quality drops, we
-                fix it or you don't pay.
+                together, and adjust targeting. You don't pay performance fees
+                on calls that clearly don't fit the rules. If lead quality
+                drops, we fix it or you don't pay.
               </p>
             </div>
 
@@ -714,15 +713,15 @@ export default function TradesPage() {
               <div className="flex items-start gap-3">
                 <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  Based in Darwin, focused exclusively on NT tradies, clinics and
-                  tour operators.
+                  Based in Darwin, focused exclusively on NT tradies, clinics
+                  and tour operators.
                 </p>
               </div>
               <div className="flex items-start gap-3">
                 <Target className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  We deliberately keep a small client list and cap one tradie per
-                  main trade per area.
+                  We deliberately keep a small client list and cap one tradie
+                  per main trade per area.
                 </p>
               </div>
               <div className="flex items-start gap-3">

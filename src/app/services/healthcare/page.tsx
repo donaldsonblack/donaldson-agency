@@ -1,20 +1,20 @@
-import { Navbar } from "@/components/navbar";
-import { AnimatedCTAButton } from "@/components/animated-cta-button";
 import {
-  CheckCircle2,
-  Calendar,
-  Phone,
-  Target,
-  TrendingUp,
-  Shield,
-  Clock,
-  Users,
   Activity,
   AlertCircle,
-  FileText,
   BarChart3,
+  Calendar,
+  CheckCircle2,
+  Clock,
+  FileText,
+  Phone,
+  Shield,
+  Target,
+  TrendingUp,
+  Users,
 } from "lucide-react";
 import Link from "next/link";
+import { AnimatedCTAButton } from "@/components/animated-cta-button";
+import { Navbar } from "@/components/navbar";
 
 export default function HealthcarePage() {
   return (
@@ -184,8 +184,8 @@ export default function HealthcarePage() {
             <div className="bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300">
               <AlertCircle className="w-12 h-12 text-orange-500 mb-6" />
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-                Admin team does their best, but no-shows and incomplete treatment
-                plans quietly erode revenue.
+                Admin team does their best, but no-shows and incomplete
+                treatment plans quietly erode revenue.
               </p>
             </div>
             <div className="bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300">
@@ -214,7 +214,8 @@ export default function HealthcarePage() {
               protected reputation.
             </h2>
             <p className="text-xl md:text-2xl text-muted-foreground mb-16 font-light leading-relaxed">
-              More of the right patients, completing the care they actually need.
+              More of the right patients, completing the care they actually
+              need.
             </p>
 
             <div className="grid lg:grid-cols-2 gap-x-16 gap-y-8">
@@ -461,7 +462,8 @@ export default function HealthcarePage() {
             defined limits.
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
-            We take on a share of the risk so you're not just buying 'marketing'.
+            We take on a share of the risk so you're not just buying
+            'marketing'.
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -487,9 +489,9 @@ export default function HealthcarePage() {
               <TrendingUp className="w-8 h-8 text-purple-500 mb-4" />
               <h3 className="font-bold text-lg mb-2">Stop-Loss Protection</h3>
               <p className="text-muted-foreground">
-                If total cost per acquired new patient (ads + our fee) exceeds an
-                agreed number for two consecutive months, we pause and fix before
-                charging further fees.
+                If total cost per acquired new patient (ads + our fee) exceeds
+                an agreed number for two consecutive months, we pause and fix
+                before charging further fees.
               </p>
             </div>
 
@@ -545,9 +547,9 @@ export default function HealthcarePage() {
               <div className="flex items-start gap-3">
                 <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                 <p>
-                  <strong>Alternative:</strong> Revenue-share option (low base fee
-                  + percentage of revenue from campaign-sourced new patients)
-                  where tracking allows.
+                  <strong>Alternative:</strong> Revenue-share option (low base
+                  fee + percentage of revenue from campaign-sourced new
+                  patients) where tracking allows.
                 </p>
               </div>
             </div>
@@ -641,9 +643,9 @@ export default function HealthcarePage() {
                 What happens if it doesn't work?
               </h3>
               <p className="text-muted-foreground">
-                We enact the stop-loss and guarantee conditions: pause, diagnose,
-                and work without charging additional fees within agreed caps, or
-                part ways while you retain all assets.
+                We enact the stop-loss and guarantee conditions: pause,
+                diagnose, and work without charging additional fees within
+                agreed caps, or part ways while you retain all assets.
               </p>
             </div>
           </div>
@@ -671,8 +673,8 @@ export default function HealthcarePage() {
               <div className="flex items-start gap-3">
                 <Target className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                 <p className="text-muted-foreground">
-                  Small enough that each clinic matters; you're not one of many in
-                  a large portfolio.
+                  Small enough that each clinic matters; you're not one of many
+                  in a large portfolio.
                 </p>
               </div>
               <div className="flex items-start gap-3">
@@ -700,8 +702,8 @@ export default function HealthcarePage() {
               Start with a free Clinic Patient Pipeline Diagnostic.
             </h2>
             <p className="text-xl mb-4 opacity-90">
-              No pressure, no jargon – just a clear picture of where patients are
-              leaking.
+              No pressure, no jargon – just a clear picture of where patients
+              are leaking.
             </p>
 
             <div className="max-w-2xl mx-auto mb-10">
@@ -709,8 +711,8 @@ export default function HealthcarePage() {
                 <div className="flex items-start gap-3">
                   <CheckCircle2 className="w-6 h-6 flex-shrink-0 mt-1" />
                   <p>
-                    20-minute review of your booking patterns, utilisation levels,
-                    and digital presence.
+                    20-minute review of your booking patterns, utilisation
+                    levels, and digital presence.
                   </p>
                 </div>
                 <div className="flex items-start gap-3">

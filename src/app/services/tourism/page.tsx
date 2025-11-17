@@ -1,20 +1,20 @@
-import { Navbar } from "@/components/navbar";
-import { AnimatedCTAButton } from "@/components/animated-cta-button";
 import {
-  CheckCircle2,
-  Calendar,
-  Phone,
-  Target,
-  TrendingUp,
-  Shield,
-  Clock,
-  Users,
-  Ship,
   AlertCircle,
   BarChart3,
+  Calendar,
+  CheckCircle2,
+  Clock,
   MapPin,
+  Phone,
+  Shield,
+  Ship,
+  Target,
+  TrendingUp,
+  Users,
 } from "lucide-react";
 import Link from "next/link";
+import { AnimatedCTAButton } from "@/components/animated-cta-button";
+import { Navbar } from "@/components/navbar";
 
 export default function TourismPage() {
   return (
@@ -475,9 +475,7 @@ export default function TourismPage() {
 
             <div className="bg-card border border-border rounded-xl p-8">
               <TrendingUp className="w-8 h-8 text-purple-500 mb-4" />
-              <h3 className="font-bold text-lg mb-2">
-                Limited Free-Work Cap
-              </h3>
+              <h3 className="font-bold text-lg mb-2">Limited Free-Work Cap</h3>
               <p className="text-muted-foreground">
                 You are never locked into paying indefinitely for
                 underperformance.
