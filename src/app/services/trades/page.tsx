@@ -19,53 +19,53 @@ export default function TradesPage() {
     <div className="min-h-screen">
       <Navbar />
 
-      <main className="pt-32 pb-20 px-4">
+      <main className="pt-32 pb-32 px-4">
         {/* Hero Section */}
-        <section className="container mx-auto max-w-6xl mb-24">
-          <div className="inline-block px-4 py-1.5 bg-muted rounded-full text-sm font-medium mb-6">
+        <section className="container mx-auto max-w-7xl mb-24">
+          <div className="inline-block px-5 py-2 bg-muted rounded-full text-sm font-medium mb-8">
             🔧 Darwin's Performance Partner for Local Tradies
           </div>
 
-          <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 leading-[1.1]">
             More high-value tradie jobs in Darwin – without gambling on another
             agency retainer.
           </h1>
 
-          <p className="text-2xl text-muted-foreground mb-4 max-w-4xl">
+          <p className="text-2xl md:text-3xl text-muted-foreground mb-6 max-w-5xl font-light">
             We turn "tradie near me" searches into booked jobs and repeat
             customers in the suburbs you actually want to drive to.
           </p>
 
-          <p className="text-xl text-muted-foreground mb-8 max-w-4xl">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-5xl font-light">
             Local, performance-focused marketing for plumbers, sparkies,
             builders, HVAC, pest and more across Darwin, Palmerston and
             surrounds.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-4 mb-10 max-w-4xl">
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-              <p className="text-muted-foreground">
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 mb-16 max-w-5xl">
+            <div className="flex items-start gap-4">
+              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+              <p className="text-lg text-muted-foreground">
                 Steady, predictable job requests instead of "feast or famine"
                 weeks.
               </p>
             </div>
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-              <p className="text-muted-foreground">
+            <div className="flex items-start gap-4">
+              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+              <p className="text-lg text-muted-foreground">
                 Focus on the suburbs and job types that actually make you money.
               </p>
             </div>
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-              <p className="text-muted-foreground">
+            <div className="flex items-start gap-4">
+              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+              <p className="text-lg text-muted-foreground">
                 Small, local agency – we tie most of our fees to performance,
                 not fluff and screenshots.
               </p>
             </div>
-            <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-              <p className="text-muted-foreground">
+            <div className="flex items-start gap-4">
+              <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" />
+              <p className="text-lg text-muted-foreground">
                 No long contracts; short pilot, then month-to-month.
               </p>
             </div>
@@ -82,62 +82,61 @@ export default function TradesPage() {
         </section>
 
         {/* Who This Is For Section */}
-        <section className="container mx-auto max-w-6xl mb-24">
-          <div className="bg-card border border-border rounded-2xl p-8 md:p-12">
-            <div className="flex items-center gap-3 mb-6">
-              <Wrench className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-5xl font-bold">
+        <section className="container mx-auto max-w-7xl mb-32">
+          <div className="bg-card/50 border border-border/50 rounded-3xl p-12 md:p-20 lg:p-28 backdrop-blur-sm">
+            <div className="mb-16">
+              <Wrench className="w-14 h-14 text-primary mb-8" />
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-[1.15]">
                 Built for owner-operator tradies and small teams in Darwin &
                 Palmerston.
               </h2>
+              <p className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed">
+                If you're on the tools all day and doing quotes at night, this
+                page is for you.
+              </p>
             </div>
 
-            <p className="text-xl text-muted-foreground mb-8">
-              If you're on the tools all day and doing quotes at night, this
-              page is for you.
-            </p>
-
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-muted-foreground">
+            <div className="grid lg:grid-cols-2 gap-x-16 gap-y-8">
+              <div className="space-y-8">
+                <div className="flex items-start gap-6">
+                  <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     Owner-operators or small teams (1–10 staff) across plumbing,
                     electrical, building, HVAC, pest, and similar trades.
                   </p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-muted-foreground">
+                <div className="flex items-start gap-6">
+                  <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     You're often under a house or in a roof when calls come in –
                     you can't always answer, and you lose jobs.
                   </p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-muted-foreground">
+                <div className="flex items-start gap-6">
+                  <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     You've tried "boosting posts" or an agency that talked
                     fancy, sent reports, then disappeared.
                   </p>
                 </div>
               </div>
-              <div className="space-y-4">
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-muted-foreground">
+              <div className="space-y-8">
+                <div className="flex items-start gap-6">
+                  <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     Your calendar swings between flat-out and worryingly quiet.
                   </p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-muted-foreground">
+                <div className="flex items-start gap-6">
+                  <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     You have decent margins and can handle more good jobs
                     without burning out.
                   </p>
                 </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                  <p className="text-muted-foreground">
+                <div className="flex items-start gap-6">
+                  <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                  <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                     You're willing to respond quickly to leads if someone else
                     keeps them coming.
                   </p>
@@ -148,54 +147,54 @@ export default function TradesPage() {
         </section>
 
         {/* Pain & Current Reality Section */}
-        <section className="container mx-auto max-w-6xl mb-24">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+        <section className="container mx-auto max-w-7xl mb-32">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-[1.15]">
             Feast-or-famine work, missed calls, and money leaking from
             "invisible" marketing.
           </h2>
-          <p className="text-xl text-muted-foreground mb-10">
+          <p className="text-xl md:text-2xl text-muted-foreground mb-16 font-light leading-relaxed">
             If this sounds like your week, you're not alone.
           </p>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-card border border-border rounded-xl p-6">
-              <AlertCircle className="w-8 h-8 text-orange-500 mb-4" />
-              <p className="text-muted-foreground">
+            <div className="bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300">
+              <AlertCircle className="w-12 h-12 text-orange-500 mb-6" />
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 One month you're booked solid; the next you're wondering where
                 the next job will come from.
               </p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6">
-              <Clock className="w-8 h-8 text-orange-500 mb-4" />
-              <p className="text-muted-foreground">
+            <div className="bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300">
+              <Clock className="w-12 h-12 text-orange-500 mb-6" />
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Last-minute jobs and after-hours callouts, but no predictable
                 schedule you can plan around.
               </p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6">
-              <TrendingUp className="w-8 h-8 text-orange-500 mb-4" />
-              <p className="text-muted-foreground">
+            <div className="bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300">
+              <TrendingUp className="w-12 h-12 text-orange-500 mb-6" />
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Marketing spend goes out – but you can't tell what actually
                 brings in jobs.
               </p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6">
-              <Phone className="w-8 h-8 text-orange-500 mb-4" />
-              <p className="text-muted-foreground">
+            <div className="bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300">
+              <Phone className="w-12 h-12 text-orange-500 mb-6" />
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 You miss calls while driving or on site; some never call back,
                 and those jobs are simply lost.
               </p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6">
-              <Shield className="w-8 h-8 text-orange-500 mb-4" />
-              <p className="text-muted-foreground">
+            <div className="bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300">
+              <Shield className="w-12 h-12 text-orange-500 mb-6" />
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 Agencies have burned you: nice decks, confusing jargon, and
                 then… nothing you can see in your calendar.
               </p>
             </div>
-            <div className="bg-card border border-border rounded-xl p-6">
-              <Target className="w-8 h-8 text-orange-500 mb-4" />
-              <p className="text-muted-foreground">
+            <div className="bg-card/50 border border-border/50 rounded-2xl p-8 hover:border-orange-500/40 hover:shadow-lg transition-all duration-300">
+              <Target className="w-12 h-12 text-orange-500 mb-6" />
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
                 You're tired of tyre-kickers and price shoppers; you want more
                 people ready to accept a reasonable quote.
               </p>
@@ -204,57 +203,57 @@ export default function TradesPage() {
         </section>
 
         {/* Desired Outcomes Section */}
-        <section className="container mx-auto max-w-6xl mb-24">
-          <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12">
-            <Calendar className="w-12 h-12 text-primary mb-6" />
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+        <section className="container mx-auto max-w-7xl mb-32">
+          <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-3xl p-12 md:p-20 lg:p-28">
+            <Calendar className="w-14 h-14 text-primary mb-8" />
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-[1.15]">
               A calendar full of the right jobs, booked weeks ahead – not just
               tomorrow.
             </h2>
-            <p className="text-xl text-muted-foreground mb-10">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-16 font-light leading-relaxed">
               This isn't about more noise. It's about more profitable jobs on
               the days you want them.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <p className="text-foreground">
+            <div className="grid lg:grid-cols-2 gap-x-16 gap-y-8">
+              <div className="flex items-start gap-6">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
                   Steady, predictable job requests from the right suburbs, not
                   random calls 50 km away.
                 </p>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <p className="text-foreground">
+              <div className="flex items-start gap-6">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
                   Ability to choose more of the higher-margin work: installs,
                   renos, bigger jobs.
                 </p>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <p className="text-foreground">
+              <div className="flex items-start gap-6">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
                   Calendar booked 1–4 weeks ahead so you can roster staff and
                   plan cashflow.
                 </p>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <p className="text-foreground">
+              <div className="flex items-start gap-6">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
                   Fewer tyre-kickers; more people ready to book or accept a
                   quote at your normal pricing.
                 </p>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <p className="text-foreground">
+              <div className="flex items-start gap-6">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
                   Clear numbers: "For every $1 we put into marketing, we aim to
                   get $X back."
                 </p>
               </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
-                <p className="text-foreground">
+              <div className="flex items-start gap-6">
+                <CheckCircle2 className="w-6 h-6 text-green-500 flex-shrink-0 mt-1.5" />
+                <p className="text-base md:text-lg text-foreground/90 leading-relaxed">
                   Less mental load worrying about next month's work.
                 </p>
               </div>
@@ -267,7 +266,7 @@ export default function TradesPage() {
           id="how-it-works"
           className="container mx-auto max-w-6xl mb-24"
         >
-          <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12 mb-12">
+          <div className="bg-primary text-primary-foreground rounded-2xl p-10 md:p-16 mb-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               The Top End Tradie Leadflow Program
             </h2>
@@ -285,8 +284,8 @@ export default function TradesPage() {
               <h3 className="text-2xl font-bold mb-6">
                 What we actually do (plain English):
               </h3>
-              <div className="space-y-4">
-                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-6">
+              <div className="space-y-6">
+                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-8">
                   <div className="bg-primary/10 rounded-full p-2">
                     <CheckCircle2 className="w-6 h-6 text-primary" />
                   </div>
@@ -300,7 +299,7 @@ export default function TradesPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-6">
+                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-8">
                   <div className="bg-primary/10 rounded-full p-2">
                     <Phone className="w-6 h-6 text-primary" />
                   </div>
@@ -315,7 +314,7 @@ export default function TradesPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-6">
+                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-8">
                   <div className="bg-primary/10 rounded-full p-2">
                     <MapPin className="w-6 h-6 text-primary" />
                   </div>
@@ -330,7 +329,7 @@ export default function TradesPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-6">
+                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-8">
                   <div className="bg-primary/10 rounded-full p-2">
                     <Target className="w-6 h-6 text-primary" />
                   </div>
@@ -345,7 +344,7 @@ export default function TradesPage() {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-6">
+                <div className="flex items-start gap-4 bg-card border border-border rounded-xl p-8">
                   <div className="bg-primary/10 rounded-full p-2">
                     <Calendar className="w-6 h-6 text-primary" />
                   </div>
@@ -403,14 +402,14 @@ export default function TradesPage() {
 
         {/* How It Works - Process Section */}
         <section className="container mx-auto max-w-6xl mb-24">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             How we turn "tradie near me" searches into booked jobs.
           </h2>
           <p className="text-xl text-muted-foreground mb-12">
             Five simple steps, no jargon.
           </p>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             <div className="flex gap-6 items-start">
               <div className="bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold text-xl flex-shrink-0">
                 1
@@ -494,7 +493,7 @@ export default function TradesPage() {
 
         {/* Guarantees & Risk Reversal Section */}
         <section className="container mx-auto max-w-6xl mb-24">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             We put our skin in the game so you're not gambling on another
             retainer.
           </h2>
@@ -502,8 +501,8 @@ export default function TradesPage() {
             Strong guarantees, clear definitions, no 12-month contracts.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-card border border-border rounded-xl p-6">
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-card border border-border rounded-xl p-8">
               <Shield className="w-8 h-8 text-green-500 mb-4" />
               <h3 className="font-bold text-lg mb-2">
                 20 Qualified Job Requests in 60 Days or We Work for Free
@@ -515,7 +514,7 @@ export default function TradesPage() {
               </p>
             </div>
 
-            <div className="bg-card border border-border rounded-xl p-6">
+            <div className="bg-card border border-border rounded-xl p-8">
               <Calendar className="w-8 h-8 text-blue-500 mb-4" />
               <h3 className="font-bold text-lg mb-2">
                 Month-to-Month After 90 Days
@@ -526,7 +525,7 @@ export default function TradesPage() {
               </p>
             </div>
 
-            <div className="bg-card border border-border rounded-xl p-6">
+            <div className="bg-card border border-border rounded-xl p-8">
               <CheckCircle2 className="w-8 h-8 text-purple-500 mb-4" />
               <h3 className="font-bold text-lg mb-2">
                 Clear Written Definitions
@@ -537,7 +536,7 @@ export default function TradesPage() {
               </p>
             </div>
 
-            <div className="bg-card border border-border rounded-xl p-6">
+            <div className="bg-card border border-border rounded-xl p-8">
               <TrendingUp className="w-8 h-8 text-orange-500 mb-4" />
               <h3 className="font-bold text-lg mb-2">Full Transparency</h3>
               <p className="text-muted-foreground">
@@ -558,7 +557,7 @@ export default function TradesPage() {
 
         {/* Pricing Section */}
         <section className="container mx-auto max-w-6xl mb-24">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Pricing that makes sense for a Darwin tradie – tied to booked jobs,
             not clicks.
           </h2>
@@ -566,7 +565,7 @@ export default function TradesPage() {
             We design every deal around your average job value and margins.
           </p>
 
-          <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-8 md:p-12">
+          <div className="bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/20 rounded-2xl p-10 md:p-16">
             <h3 className="text-2xl font-bold mb-6">
               Typical structure for new tradie partners:
             </h3>
@@ -634,7 +633,7 @@ export default function TradesPage() {
 
         {/* FAQ Section */}
         <section className="container mx-auto max-w-6xl mb-24">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Straight answers to questions Darwin tradies actually ask.
           </h2>
 
@@ -703,7 +702,7 @@ export default function TradesPage() {
 
         {/* About Section */}
         <section className="container mx-auto max-w-6xl mb-24">
-          <div className="bg-card border border-border rounded-2xl p-8 md:p-12">
+          <div className="bg-card border border-border rounded-2xl p-10 md:p-16">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">
               A small Darwin agency that only makes money if your phone rings.
             </h2>
@@ -753,7 +752,7 @@ export default function TradesPage() {
 
         {/* Final CTA Section */}
         <section className="container mx-auto max-w-6xl">
-          <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-2xl p-8 md:p-12 text-center">
+          <div className="bg-gradient-to-br from-primary to-primary/80 text-primary-foreground rounded-2xl p-10 md:p-16 text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Start with a free Local Tradie Lead & Bookings Diagnostic.
             </h2>

@@ -3,7 +3,6 @@
 import * as React from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
-import { useIsMobile } from "@/hooks/use-mobile";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -33,7 +32,6 @@ const services: { title: string; href: string; description: string }[] = [
 ];
 
 export function Navbar() {
-  const isMobile = useIsMobile();
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
 
   return (
@@ -65,7 +63,7 @@ export function Navbar() {
         </button>
 
         {/* Desktop Navigation */}
-        <NavigationMenu viewport={isMobile} className="hidden md:flex">
+        <NavigationMenu className="hidden md:flex">
           <NavigationMenuList className="flex-wrap">
             <NavigationMenuItem>
               <NavigationMenuTrigger>Services</NavigationMenuTrigger>
