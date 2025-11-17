@@ -26,6 +26,7 @@ jobs:
 
   lint:
     name: Lint
+    needs: setup
     runs-on: [self-hosted, core-www-marketing-01]
     steps:
       - name: Run linter
@@ -36,6 +37,7 @@ jobs:
 
   build:
     name: Build
+    needs: lint
     runs-on: [self-hosted, core-www-marketing-01]
     steps:
       - name: Build application
@@ -60,6 +62,7 @@ jobs:
 
   deploy:
     name: Deploy
+    needs: build
     runs-on: [self-hosted, core-www-marketing-01]
     steps:
       - name: Pull and Restart Compose
