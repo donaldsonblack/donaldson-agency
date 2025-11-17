@@ -6,13 +6,13 @@ import {
 	Target,
 	TrendingUp,
 	Zap,
-	ChevronDown,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { AnimatedSection, ScaleIn } from "@/components/animated-section";
-import { ServicesDropdown } from "@/components/services-dropdown";
+import { Navbar } from "@/components/navbar";
+import { AnimatedCTAButton } from "@/components/animated-cta-button";
 
 // Lazy load heavy components that are below the fold
 const TimelineWithBeam = dynamic(() =>
@@ -48,49 +48,7 @@ export default function Home() {
 			>
 				Skip to main content
 			</a>
-			{/* Header */}
-			<header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-				<nav
-					className="container mx-auto px-4 h-16 flex items-center justify-between"
-					aria-label="Main navigation"
-				>
-					<Link
-						href="/"
-						className="text-2xl font-bold"
-						aria-label="Donaldson Agency Home"
-					>
-						Donaldson Marketing
-					</Link>
-					<div className="hidden md:flex items-center gap-8" role="navigation">
-						<ServicesDropdown />
-						<Link
-							href="#work"
-							className="text-sm hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
-						>
-							Work
-						</Link>
-						<Link
-							href="#about"
-							className="text-sm hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
-						>
-							About
-						</Link>
-						<Link
-							href="/contact"
-							className="text-sm hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded"
-						>
-							Contact
-						</Link>
-					</div>
-					<Link
-						href="/contact"
-						className="bg-primary text-primary-foreground px-6 py-2 rounded-full font-medium text-sm hover:opacity-90 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-						aria-label="Get started with Donaldson Agency"
-					>
-						Get Started
-					</Link>
-				</nav>
-			</header>
+			<Navbar />
 
 			{/* Hero Section */}
 			<main id="main-content">
@@ -113,19 +71,12 @@ export default function Home() {
 							</p>
 							<AnimatedSection delay={0.4}>
 								<div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-									<Link
-										href="/contact"
-										className="bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold text-lg hover:opacity-90 transition-opacity inline-flex items-center justify-center gap-2"
-									>
+									<AnimatedCTAButton href="/contact" variant="primary">
 										Start Growing Today
-										<ArrowRight className="w-5 h-5" />
-									</Link>
-									<Link
-										href="#services"
-										className="border border-border px-8 py-4 rounded-full font-semibold text-lg hover:bg-muted transition-colors inline-flex items-center justify-center"
-									>
+									</AnimatedCTAButton>
+									<AnimatedCTAButton href="#services" variant="secondary">
 										Learn More
-									</Link>
+									</AnimatedCTAButton>
 								</div>
 							</AnimatedSection>
 						</div>
