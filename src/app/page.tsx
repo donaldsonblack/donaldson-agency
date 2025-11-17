@@ -12,6 +12,7 @@ import {
   Target,
   TrendingUp,
   Wrench,
+  X,
 } from "lucide-react";
 import Link from "next/link";
 import { AnimatedCTAButton } from "@/components/animated-cta-button";
@@ -263,7 +264,7 @@ export default function Home() {
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
+                      <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
                       <div>
                         <div className="font-medium mb-1">Focus</div>
                         <div className="text-sm text-muted-foreground">
@@ -272,7 +273,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
+                      <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
                       <div>
                         <div className="font-medium mb-1">Contracts</div>
                         <div className="text-sm text-muted-foreground">
@@ -281,7 +282,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
+                      <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
                       <div>
                         <div className="font-medium mb-1">Reporting</div>
                         <div className="text-sm text-muted-foreground">
@@ -290,7 +291,7 @@ export default function Home() {
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-2 h-2 rounded-full bg-muted-foreground mt-2 flex-shrink-0" />
+                      <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
                       <div>
                         <div className="font-medium mb-1">Geography</div>
                         <div className="text-sm text-muted-foreground">
@@ -301,9 +302,9 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="p-8 bg-primary/5">
+                <div className="p-8 bg-green-50 dark:bg-green-950/30">
                   <div className="text-center mb-6">
-                    <h3 className="text-lg font-bold text-primary">
+                    <h3 className="text-lg font-bold text-foreground">
                       Donaldson Marketing
                     </h3>
                   </div>
