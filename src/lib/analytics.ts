@@ -117,7 +117,6 @@ export const trackEnhancedConversion = (
       send_to: `${ADS_CONVERSION_ID}/${conversionLabel}`,
       value: value || 0,
       currency: "USD",
-      // @ts-expect-error - enhanced_conversion_data is valid but not in types
       enhanced_conversion_data: enhancedConversionData,
     });
   }
