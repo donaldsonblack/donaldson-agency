@@ -71,6 +71,5 @@ jobs:
       - name: Pull and Restart Compose
         working-directory: /opt/agency/
         run: |
-          docker compose pull
           docker compose up -d --remove-orphans
           docker image prune -f
