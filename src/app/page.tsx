@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { AnimatedCTAButton } from "@/components/animated-cta-button";
+import { ComparisonTable } from "@/components/comparison-table";
 import { Navbar } from "@/components/navbar";
 
 export default function Home() {
@@ -254,101 +255,7 @@ export default function Home() {
             </div>
 
             {/* Comparison Table */}
-            <div className="bg-card border border-border rounded-2xl overflow-hidden max-w-4xl mx-auto mb-12">
-              <div className="grid md:grid-cols-2 divide-x divide-border">
-                <div className="p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-lg font-bold text-muted-foreground">
-                      Typical Agency
-                    </h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="font-medium mb-1">Focus</div>
-                        <div className="text-sm text-muted-foreground">
-                          Clicks & impressions
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="font-medium mb-1">Contracts</div>
-                        <div className="text-sm text-muted-foreground">
-                          6–12 month retainers
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="font-medium mb-1">Reporting</div>
-                        <div className="text-sm text-muted-foreground">
-                          Generic screenshots
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <X className="w-5 h-5 text-red-500 flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="font-medium mb-1">Geography</div>
-                        <div className="text-sm text-muted-foreground">
-                          Anywhere
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-8 bg-green-50 dark:bg-green-950/30">
-                  <div className="text-center mb-6">
-                    <h3 className="text-lg font-bold text-foreground">
-                      Donaldson Marketing
-                    </h3>
-                  </div>
-                  <div className="space-y-4">
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="font-medium mb-1">Focus</div>
-                        <div className="text-sm text-muted-foreground">
-                          Jobs, patients, bookings
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="font-medium mb-1">Contracts</div>
-                        <div className="text-sm text-muted-foreground">
-                          Pilots + month-to-month
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="font-medium mb-1">Reporting</div>
-                        <div className="text-sm text-muted-foreground">
-                          Plain-English job/patient/booking reports
-                        </div>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-1" />
-                      <div>
-                        <div className="font-medium mb-1">Geography</div>
-                        <div className="text-sm text-muted-foreground">
-                          Darwin & Top End only
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ComparisonTable />
 
             <div className="bg-muted rounded-2xl p-8 max-w-4xl mx-auto">
               <div className="grid md:grid-cols-3 gap-6">
