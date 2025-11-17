@@ -89,35 +89,58 @@ export default function Home() {
               </div>
 
               {/* Right: Visual */}
-              <div className="bg-card border border-border rounded-2xl p-8">
-                <div className="space-y-6">
-                  <div className="text-center pb-6 border-b border-border">
-                    <div className="text-sm font-medium text-muted-foreground mb-2">
+              <div className="bg-card border border-border rounded-2xl p-8 md:p-10">
+                <div className="space-y-8">
+                  {/* Header */}
+                  <div className="text-center pb-4 border-b border-border">
+                    <h3 className="text-lg font-semibold text-foreground">
                       Simple System
+                    </h3>
+                  </div>
+
+
+                  {/* Icon Flow */}
+                  <div className="flex items-center justify-center gap-3 md:gap-6 py-4">
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="bg-primary/10 rounded-full p-4 md:p-5">
+                        <Target className="w-7 h-7 md:w-8 md:h-8 text-primary" />
+                      </div>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-muted-foreground/60 flex-shrink-0" />
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="bg-primary/10 rounded-full p-4 md:p-5">
+                        <Phone className="w-7 h-7 md:w-8 md:h-8 text-primary" />
+                      </div>
+                    </div>
+                    <ArrowRight className="w-6 h-6 text-muted-foreground/60 flex-shrink-0" />
+                    <div className="flex flex-col items-center gap-3">
+                      <div className="bg-primary/10 rounded-full p-4 md:p-5">
+                        <CheckCircle2 className="w-7 h-7 md:w-8 md:h-8 text-primary" />
+                      </div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
-                      <Target className="w-6 h-6 text-primary" />
+
+                  {/* Labels */}
+                  <div className="grid grid-cols-3 gap-2 md:gap-4 text-xs md:text-sm text-center">
+                    <div className="text-muted-foreground font-medium">
+                      Search / Social / Maps
                     </div>
-                    <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                    <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
-                      <Phone className="w-6 h-6 text-primary" />
+                    <div className="text-muted-foreground font-medium">
+                      Landing / Call Tracking
                     </div>
-                    <ArrowRight className="w-5 h-5 text-muted-foreground flex-shrink-0" />
-                    <div className="bg-primary/10 rounded-full p-3 flex-shrink-0">
-                      <CheckCircle2 className="w-6 h-6 text-primary" />
+                    <div className="text-muted-foreground font-medium">
+                      Jobs / Patients / Guests
                     </div>
                   </div>
-                  <div className="grid grid-cols-3 gap-4 text-xs text-center text-muted-foreground">
-                    <div>Search / Social / Maps</div>
-                    <div>Landing / Call Tracking</div>
-                    <div>Jobs / Patients / Guests</div>
-                  </div>
-                  <div className="pt-6 border-t border-border">
-                    <div className="flex items-center gap-2 text-sm">
-                      <MapPin className="w-4 h-4 text-primary" />
-                      <span className="text-muted-foreground">
+
+                  {/* Divider line */}
+                  <div className="w-full h-px bg-border" />
+
+                  {/* Location */}
+                  <div className="pt-2">
+                    <div className="flex items-center justify-center gap-2 text-sm md:text-base">
+                      <MapPin className="w-5 h-5 text-primary flex-shrink-0" />
+                      <span className="text-muted-foreground font-medium">
                         Darwin, Palmerston & Top End
                       </span>
                     </div>
