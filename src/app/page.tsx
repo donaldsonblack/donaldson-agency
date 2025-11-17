@@ -12,7 +12,6 @@ import {
   Target,
   TrendingUp,
   Wrench,
-  X,
 } from "lucide-react";
 import Link from "next/link";
 import { AnimatedCTAButton } from "@/components/animated-cta-button";
@@ -97,7 +96,6 @@ export default function Home() {
                       Simple System
                     </h3>
                   </div>
-
 
                   {/* Icon Flow */}
                   <div className="flex items-center justify-center gap-3 md:gap-6 py-4">

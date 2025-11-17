@@ -23,7 +23,7 @@ export function ComparisonTable() {
         // Calculate progress (0 to 1) as element scrolls through viewport
         const scrollProgress = Math.min(
           1,
-          Math.max(0, (windowHeight - elementTop) / windowHeight)
+          Math.max(0, (windowHeight - elementTop) / windowHeight),
         );
 
         // Scale up to 1.05 as it scrolls
